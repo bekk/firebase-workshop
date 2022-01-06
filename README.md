@@ -1,3 +1,1 @@
-# Middagsplanlegger
-
-En middagsplanlegger
+# Dinner planner
