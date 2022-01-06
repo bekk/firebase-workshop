@@ -1,3 +1,3 @@
 # Middagsplanlegger
 
-En middagsplanlegger-applikasjon
+En middagsplanlegger
