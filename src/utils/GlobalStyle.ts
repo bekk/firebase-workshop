@@ -46,6 +46,7 @@ const base = css`
     width: '100%';
     font-size: 14pt;
     resize: none;
+    padding: 0.3em;
   }
 `;
 
