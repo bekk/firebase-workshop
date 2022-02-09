@@ -23,7 +23,7 @@ const ButtonsContainer = styled.div`
 const HomeHeader = styled.h1`
     text-align: center;
     font-size: 3em;
-    margin-bottom: 1.1em;
+    margin-bottom: 1em;
 `
 
 const Home = () => {  
