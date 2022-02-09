@@ -1,18 +1,25 @@
 import React  from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Dish from './Dish';
-import Dishes from './Dishes';
+import styled from 'styled-components';
 import Home from './Home';
+import Question from './Question';
+import Questions from './Questions';
+import './firebase';
+
+const Container = styled.main`
+  display: grid;
+`;
 
 const App = () => {
     return (
-        <div>    
+        <Container>    
             <Routes>
                 <Route exact path="/" element={ <Home /> } />
-                <Route path="/dishes/:id" element={ <Dish /> } />
-                <Route path="/dishes" element={ <Dishes /> } />
+                <Route path="/question" element={ <Question /> } />
+                <Route path="/question/:id" element={ <Question /> } />
+                <Route path="/questions" element={ <Questions /> } />
             </Routes>
-        </div>
+        </Container>
     );
 }
 

@@ -1,0 +1,6 @@
+rules_version = '2';
+service cloud.firestore {
+    match /dishes/{dishesId} {
+        allow read: if request.auth != null;
+    }
+}
