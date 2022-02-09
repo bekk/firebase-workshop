@@ -38,6 +38,7 @@ const base = css`
     background-color: #E9DAC1;
     border: 2px solid black;
     cursor: pointer;
+    color: black;
   }
 
   input, textarea {
