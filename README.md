@@ -1,1 +1,1 @@
-# Dinner planner
+# Quiz Generator
