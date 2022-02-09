@@ -7,32 +7,30 @@ const QuestionContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    margin-left: 1em;
+    margin-top: 2em;
 `
 
 const ButtonsContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;   
+    margin-top: 1em;   
 `
-
 
 const Form = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
     justify-content: center;
     align-items: center;
 `
 
 const FormField = styled.div`
-    margin-top: 10px;
+    margin-top: 1em;
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.5em;
+    width: 100%;
 `
 
 const Question = () => {  
@@ -61,23 +59,23 @@ const Question = () => {
 
     return (
         <>
-            <div style={ { width: '3em'} }>
+            <div style={ { width: '3em', marginLeft: '1em'} }>
                 <button onClick={ () => navigate('/') }>Tilbake</button>
             </div>
             <QuestionContainer>
                 <Form>
                     <FormField>
                         <label htmlFor="title">Spørsmål</label>
-                        <input type="text" value={ question.title } name="question" id="question"  onChange={ e => setQuestion({ ...question, title: e.target.value }) }/>
+                        <textarea rows="2" cols="50" type="text" value={ question.title } name="question" id="question"  onChange={ e => setQuestion({ ...question, title: e.target.value }) }/>
                     </FormField>
                     <FormField>
                         <label htmlFor="answer">Svar</label>
-                        <input type="text" value={ question.answer } name="answer" id="answer"  onChange={ e => setQuestion({ ...question, answer: e.target.value }) }/>
+                        <textarea rows="1" cols="50" type="text" value={ question.answer } name="answer" id="answer"  onChange={ e => setQuestion({ ...question, answer: e.target.value }) }/>
                     </FormField>
                 </Form>
                 <ButtonsContainer>
-                    <button onClick={ () => onSubmit(id) }>Lagre</button>
-                    <button onClick={ () => onDelete(id) }>Slett</button>
+                    <button style={ { backgroundColor: '#54BAB9', marginRight: '1em' } } onClick={ () => onSubmit(id) }>Lagre</button>
+                    <button style={ {backgroundColor: '#D885A3', color: 'white'} }onClick={ () => onDelete(id) }>Slett</button>
                 </ButtonsContainer>
             </QuestionContainer>
         </>

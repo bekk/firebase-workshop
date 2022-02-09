@@ -30,20 +30,21 @@ const base = css`
   }
 
   button {
-    margin: 0.5em 0.5em;
-    padding: 0.25em 1em;
-    height: 2em;
+    padding: 1.25em 1em;
     align-items: center;
     justify-content: center;
     display: flex;
     font-size: 1em;
     background-color: #E9DAC1;
+    border: 2px solid black;
     cursor: pointer;
   }
 
-  input {
+  input, textarea {
     font-family: Monaco;
-    width: 40em;
+    width: '100%';
+    font-size: 14pt;
+    resize: none;
   }
 `;
 
@@ -176,6 +177,10 @@ const reset = css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+
+  table, tbody, thead, td {
+    border: 1px solid black;
   }
 `;
 

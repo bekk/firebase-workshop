@@ -8,6 +8,8 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-right: 1em;
+    padding-left: 1em;
 `
 
 const ButtonsContainer = styled.div`
@@ -15,7 +17,7 @@ const ButtonsContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    margin-top: 2em;
 `
 
 const HomeHeader = styled.h1`
@@ -34,7 +36,7 @@ const Home = () => {
             <br/>
             <ButtonsContainer>
                 <button  onClick={ () => navigate('question') }>Legg til nytt spørsmål</button>
-                <button  onClick={ () => navigate('questions') }>Alle spørsmål</button>
+                <button style={ {marginLeft: '1em'} } onClick={ () => navigate('questions') }>Alle spørsmål</button>
             </ButtonsContainer>
         </Container>
     );

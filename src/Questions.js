@@ -5,31 +5,21 @@ import { streamQuestions } from './firebase';
 
 
 const Table = styled.table`
-    border: 1px solid black;
     margin-top: 1em;
 `
-
-const TableHeader = styled.thead`
-    border: 1px solid black;
-`
-
-const TableBody = styled.tbody`
-    border: 1px solid black;
-`
-
 const TableRow = styled.tr`
-    border: 1px solid black;
+    &:hover {
+      font-weight: bold;
+    }  
 `
 const TableDataHead = styled.td`
-    border: 1px solid black;
     padding: 5px;
     font-weight: bold;
 `
-
 const TableData = styled.td`
-    border: 1px solid black;
     padding: 5px;
     cursor: pointer;
+
 `
 const QuestionsContainer = styled.div`
     margin: 1em;
@@ -39,8 +29,8 @@ const QuestionsContainer = styled.div`
     flex-direction: column;
 `
 const QuestionsHeader = styled.h1`
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 2em;
+    margin-bottom: 1em;
 `
 
 const QuestionRow = ({question, key, onClick} ) => {
@@ -78,23 +68,23 @@ const Questions = () => {
 
     return (
         <>
-            <div style={ { width: '3em'} }>
+            <div style={ { width: '3em', marginLeft: '1em'} }>
                 <button onClick={ () => navigate('/') }>Tilbake</button>
             </div>
             <QuestionsContainer>
                 <QuestionsHeader>Alle Spørsmål</QuestionsHeader>
                 <Table>
-                    <TableHeader>
+                    <thead>
                         <TableRow>
                             <TableDataHead>Spørsmål</TableDataHead>
                             <TableDataHead>Svar</TableDataHead>
                         </TableRow>
-                    </TableHeader>
-                    <TableBody>
+                    </thead>
+                    <tbody>
                         { questions.map((question, key) => {
                             return <QuestionRow question={ question } key={ key } onClick={ () => navigate(`/question/${question.id}`) }/>
                         }) }
-                    </TableBody>
+                    </tbody>
                 </Table>              
             </QuestionsContainer>
         </>
