@@ -43,12 +43,18 @@ const QuestionsHeader = styled.h1`
     margin-bottom: 20px;
 `
 
-const QuestionRow = ({question, key, onClick}) => {
+const QuestionRow = ({question, key, onClick} ) => {
     return ( <TableRow key={ key } onClick={ onClick }>
         <TableData>{ question.title }</TableData>
         <TableData>{ question.answer }</TableData>
     </TableRow>)
 }
+
+QuestionRow.propTypes = {
+    question: Object,
+    key: Number,
+    onClick: Function,
+};
 
 const Questions = () => {  
     const navigate = useNavigate();
