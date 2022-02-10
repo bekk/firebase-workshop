@@ -1,26 +1,27 @@
 import React  from 'react';
 import { Route, Routes } from 'react-router-dom';
-import styled from 'styled-components';
-import Home from './Home';
-import Question from './Question';
-import Questions from './Questions';
-import './firebase';
+import './utils/firebase';
 
-const Container = styled.main`
-  display: grid;
-`;
+import Home from './Containers/Home';
+import Login from './Containers/Login'
+import Question from './Containers/Question';
+import Questions from './Containers/Questions';
+import Register from './Containers/Register';
+import Reset from './Containers/Reset';
 
 const App = () => {
     return (
-        <Container>    
+        <div>    
             <Routes>
-                <Route exact path="/" element={ <Home /> } />
+                <Route path="/" element={ <Home /> } />
+                <Route path="/login" element={ <Login /> } />
+                <Route path="/register" element={ <Register /> } />
+                <Route path="/reset" element={ <Reset /> } />
                 <Route path="/question" element={ <Question /> } />
                 <Route path="/question/:id" element={ <Question /> } />
                 <Route path="/questions" element={ <Questions /> } />
             </Routes>
-        </Container>
+        </div>
     );
 }
-
 export default App;

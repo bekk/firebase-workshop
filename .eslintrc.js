@@ -97,7 +97,7 @@ module.exports = {
             "error",
             4
         ],
-        "react/prop-types": "warn",
+        "react/prop-types": 0,
         "sort-imports": [
             "warn",
             {

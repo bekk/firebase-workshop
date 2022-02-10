@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import {createOrUpdateQuestion, deleteQuestion, getQuestion} from './firebase';
+import {createOrUpdateQuestion, deleteQuestion, getQuestion} from '../utils/firebase';
 
 const Question = () => {  
     const navigate = useNavigate();
@@ -24,6 +24,7 @@ const Question = () => {
     }
 
     const onDelete = (id) => {
+        if(!id) return navigate('/')
         deleteQuestion(id).then(() => navigate('/'))
     }
 
