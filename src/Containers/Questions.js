@@ -19,9 +19,7 @@ const Questions = () => {
     useEffect(() => {
         const unsubscribe = streamQuestions(
             (querySnapshot) => {
-                if(!querySnapshot) {
-                    console.log('Fant ingen spørsmål')
-                }
+                if(!querySnapshot) console.log('Fant ingen spørsmål')
                 const questionItems = querySnapshot.docs.map(docSnapshot => {
                     return {
                         id: docSnapshot.id,
@@ -45,7 +43,8 @@ const Questions = () => {
             </div>
             <QuestionsContainer>
                 <QuestionsHeader>Spørsmål</QuestionsHeader>
-                <Table>
+                { questions.length == 0 && <h1>Her var det tomt! Hva med å lage noen spørsmål?</h1> }
+                { questions.length > 0 && <Table>
                     <thead>
                         <TableRow>
                             <TableDataHead>Spørsmål</TableDataHead>
@@ -57,7 +56,7 @@ const Questions = () => {
                             return <QuestionRow question={ question } key={ index } onClick={ () => navigate(`/question/${question.id}`) }/>
                         }) }
                     </tbody>
-                </Table>              
+                </Table> }          
             </QuestionsContainer>
         </>
     );

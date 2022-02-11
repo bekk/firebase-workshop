@@ -3,10 +3,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import {createOrUpdateQuestion, deleteQuestion, getQuestion} from '../utils/firebase';
 
+
+
 const Question = () => {  
     const navigate = useNavigate();
 
     const [question, setQuestion] = useState({});
+    const [error, setError] = useState('');
     const { id } = useParams()
 
     useEffect(() => {
@@ -20,7 +23,9 @@ const Question = () => {
 
 
     const onSubmit = (id) => {
-        createOrUpdateQuestion(question, id).then(() => navigate('/'))
+        createOrUpdateQuestion(question, id)
+            .then(() => navigate('/'))
+            .catch(error => setError(error))
     }
 
     const onDelete = (id) => {
@@ -49,6 +54,7 @@ const Question = () => {
                     <SaveButton onClick={ () => onSubmit(id) }>Lagre</SaveButton>
                     <DeleteButton onClick={ () => onDelete(id) }>Slett</DeleteButton>
                 </ButtonsContainer>
+                { error && <h1 style={ {color: '#D885A3', marginTop: '1em'} }>{ error.toString() }</h1> }
             </QuestionContainer>
         </>
 

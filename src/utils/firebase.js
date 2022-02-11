@@ -55,6 +55,10 @@ const authenticateAnonymously = () => {
 const createOrUpdateQuestion = (question, id) => {
     const auth = getAuth();
 
+    if(!auth || !auth.currentUser) {
+        return Promise.reject('Du må være innlogget for å lage spørsmål')
+    }
+
     if(id){
         const questionRef = doc(db, 'questions', id)
         return updateDoc(questionRef, {
