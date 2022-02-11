@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { streamQuestions } from '../utils/firebase';
+import { getCurrentUserId, streamQuestions } from '../utils/firebase';
 
 
 const QuestionRow = ({question, onClick} ) => {
@@ -19,6 +19,9 @@ const Questions = () => {
     useEffect(() => {
         const unsubscribe = streamQuestions(
             (querySnapshot) => {
+                if(!querySnapshot) {
+                    console.log('Fant ingen spørsmål')
+                }
                 const questionItems = querySnapshot.docs.map(docSnapshot => {
                     return {
                         id: docSnapshot.id,
@@ -28,6 +31,8 @@ const Questions = () => {
                 });
                 setQuestions(questionItems);
             },
+            (error) => console.log(error), 
+            getCurrentUserId()
         );
         return unsubscribe;
     }, [setQuestions]);
@@ -39,7 +44,7 @@ const Questions = () => {
                 <button onClick={ () => navigate('/') }>Tilbake</button>
             </div>
             <QuestionsContainer>
-                <QuestionsHeader>Alle Spørsmål</QuestionsHeader>
+                <QuestionsHeader>Spørsmål</QuestionsHeader>
                 <Table>
                     <thead>
                         <TableRow>

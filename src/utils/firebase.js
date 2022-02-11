@@ -35,6 +35,7 @@ const firebaseConfig = {
 };
 
 const runWithEmulators = false
+const googleProvider = new GoogleAuthProvider();
 
 export const app = initializeApp(firebaseConfig)
 let auth = getAuth(app)
@@ -80,36 +81,53 @@ const getQuestions = () => {
     return getDocs(questionsRef)
 }
 
+const getUsers = () => {
+    const usersRef = collection(db, 'users')
+    return getDocs(usersRef)
+}
+
 const deleteQuestion = (id) => {
     const questionsRef = doc(db, 'questions', id)
     return deleteDoc(questionsRef)
 }
 
-const streamQuestions = (snapshot, error) => {
-    const auth = getAuth();
-    const itemsColRef = collection(db, 'questions')
-    let itemsQuery = query(itemsColRef)
-    
-    if(auth && auth.currentUser){
-        itemsQuery = query(itemsColRef, where('createdBy', '==', auth.currentUser.uid))
+const getUser = async (uid) => {
+    if(!uid) return
+    const q = query(collection(db, 'users'), where('uid', '==', uid));
+    const docsSnapshot = await getDocs(q);
+
+    return docsSnapshot.docs[0].data()
+}
+
+const streamQuestions = async (snapshot, error, createdBy) => {
+    const questionsRef = collection(db, 'questions')
+    const user = await getUser(createdBy)
+
+    let questionsQuey = query(questionsRef, where('createdBy', '==', createdBy))
+
+    if(user && user.role == 'admin') {
+        questionsQuey = query(questionsRef)
     }
 
-    return onSnapshot(itemsQuery, snapshot, error);
+    return onSnapshot(questionsQuey, snapshot, error);
 };
 
-const googleProvider = new GoogleAuthProvider();
 
 const signInWithGoogle = async () => {
     try {
         const res = await signInWithPopup(auth, googleProvider);
         const user = res.user;
-        await addDoc(collection(db, 'users'), {
-            uid: user.uid,
-            name: user.displayName,
-            role: 'user',
-            authProvider: 'google',
-            email: user.email,
-        });
+        const q = query(collection(db, 'users'), where('uid', '==', user.uid));
+        const docs = await getDocs(q);
+        if (docs.docs.length === 0) {
+            await addDoc(collection(db, 'users'), {
+                uid: user.uid,
+                name: user.displayName,
+                role: 'user',
+                authProvider: 'google',
+                email: user.email,
+            });
+        }
     } catch (err) {
         console.error(err);
     }
@@ -151,6 +169,32 @@ const logout = () => {
     signOut(auth);
 }
 
+const getCurrentUserId = () => {
+    const auth = getAuth()
+    return auth && auth.currentUser ? auth.currentUser.uid : ''
+}
+
+const createQuiz = async () => {
+
+    const questionsSnapshot = await getQuestions()
+    const usersSnapshot = await getUsers()
+
+    const questions = []
+    questionsSnapshot.forEach(qSnap => {
+        usersSnapshot.forEach(uSnap => {
+            if(qSnap.data().createdBy === uSnap.data().uid){
+                questions.push({
+                    title: qSnap.data().title, 
+                    answer: qSnap.data().answer, 
+                    createdByName: uSnap.data().name
+                })
+            }
+        })
+    })
+
+    return questions.sort(() => Math.random() - Math.random()).slice(0, 3)
+}
+
 export {
     auth,
     db,
@@ -165,5 +209,7 @@ export {
     registerWithEmailAndPassword,
     logout,
     sendPasswordReset,
-    onAuthStateChanged
+    onAuthStateChanged,
+    getCurrentUserId,
+    createQuiz
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { auth, logout } from '../utils/firebase';
+import { auth, createQuiz, logout } from '../utils/firebase';
 
 // eslint-disable-next-line react/prop-types
 const UserManagement = ({user, navigate}) => {
@@ -14,6 +14,13 @@ const UserManagement = ({user, navigate}) => {
         <button onClick={ () => navigate('/login') }>Log inn</button>
         <button style={ {marginLeft: '1em'} } onClick={ () => navigate('/register') }>Registrer</button>
     </div>)
+}
+
+// eslint-disable-next-line react/prop-types
+const onCreateQuiz = (navigate) => {
+    createQuiz().then(quiz =>{
+        navigate('/quiz', { state: quiz } )
+    })    
 }
 
 const Home = () => {  
@@ -29,7 +36,7 @@ const Home = () => {
     return (
         <Container>
             <HomeHeader>Quiz generator</HomeHeader>            
-            <CreateQuizButton onClick={ () => alert('For å lage en quiz må denne funksjonaliteten lages først:)') }>Lag Quiz</CreateQuizButton>
+            <CreateQuizButton onClick={ () => onCreateQuiz(navigate) }>Lag Quiz</CreateQuizButton>
             <ButtonsContainer>
                 <button  onClick={ () => navigate('question') }>Legg til nytt spørsmål</button>
                 <button style={ {marginLeft: '1em'} } onClick={ () => navigate('questions') }>Mine spørsmål</button>
