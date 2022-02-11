@@ -16,16 +16,11 @@ const UserManagement = ({user, navigate}) => {
     </div>)
 }
 
-// eslint-disable-next-line react/prop-types
-const onCreateQuiz = (navigate) => {
-    createQuiz().then(quiz =>{
-        navigate('/quiz', { state: quiz } )
-    })    
-}
-
 const Home = () => {  
     const navigate = useNavigate();
     const [user, setUser] = useState();
+    const [error, setError] = useState('');
+
     
     useEffect(() =>{
         const unsubscribe = auth.onAuthStateChanged(authUser => authUser ? setUser(authUser) : setUser(null));
@@ -36,7 +31,17 @@ const Home = () => {
     return (
         <Container>
             <HomeHeader>Quiz generator</HomeHeader>            
-            <CreateQuizButton onClick={ () => onCreateQuiz(navigate) }>Lag Quiz</CreateQuizButton>
+            <CreateQuizButton onClick={ () =>  createQuiz()
+                .then(quiz =>{
+                    navigate('/quiz', { state: quiz } )
+                })
+                .catch(error => {
+                    setError(error)
+                })
+            }
+            >Lag Quiz
+            </CreateQuizButton>
+            { error && <h1 style={ {color: '#D885A3', marginTop: '1em'} }>{ error }</h1> }
             <ButtonsContainer>
                 <button  onClick={ () => navigate('question') }>Legg til nytt spørsmål</button>
                 <button style={ {marginLeft: '1em'} } onClick={ () => navigate('questions') }>Mine spørsmål</button>
@@ -68,18 +73,13 @@ const ButtonsContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    top: 50%;
-    bottom: 50%;
-    position: absolute;
+    margin-top: 10%;
 `
 
 const CreateQuizButton = styled.button`
     background-color: #54BAB9;
     padding: 4em;
     color: white;
-    top: 20%;
-    bottom: 80%;
-    position: absolute;
 `
 
 const UserManagementContainer = styled.div`

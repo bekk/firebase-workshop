@@ -43,7 +43,7 @@ const Questions = () => {
             </div>
             <QuestionsContainer>
                 <QuestionsHeader>Spørsmål</QuestionsHeader>
-                { questions.length == 0 && <h1>Her var det tomt! Kanskje du kan lage noen spørsmål?</h1> }
+                { questions.length == 0 && <InfoText>Her var det tomt! Kanskje du vil lage noen spørsmål? <br/><br/> Eller logge inn, hvis du ikke har gjort det :) </InfoText> }
                 { questions.length > 0 && <Table>
                     <thead>
                         <TableRow>
@@ -77,8 +77,15 @@ const TableDataHead = styled.td`
 const TableData = styled.td`
     padding: 5px;
     cursor: pointer;
-
 `
+
+const InfoText = styled.h1`
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+`
+
 const QuestionsContainer = styled.div`
     margin: 1em;
     display: flex;

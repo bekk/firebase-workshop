@@ -179,6 +179,11 @@ const getCurrentUserId = () => {
 }
 
 const createQuiz = async () => {
+    const auth = getAuth();
+
+    if(!auth || !auth.currentUser) {
+        return Promise.reject('Du må være logget inn for å lage en quiz')
+    }
 
     const questionsSnapshot = await getQuestions()
     const usersSnapshot = await getUsers()

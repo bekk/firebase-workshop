@@ -45,6 +45,7 @@ function Login() {
                 <div>
                     <Link to="/reset">Glemt passord?</Link>
                 </div>
+                <br/>
                 <div>
                     <Link to="/register">Register deg</Link>
                 </div>
