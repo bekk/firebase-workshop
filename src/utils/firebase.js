@@ -196,7 +196,7 @@ const createQuiz = async () => {
         })
     })
 
-    return questions.sort(() => Math.random() - Math.random()).slice(0, 3)
+    return questions.sort(() => Math.random() - Math.random()).slice(0, 5)
 }
 
 export {

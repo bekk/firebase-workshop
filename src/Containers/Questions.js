@@ -43,7 +43,7 @@ const Questions = () => {
             </div>
             <QuestionsContainer>
                 <QuestionsHeader>Spørsmål</QuestionsHeader>
-                { questions.length == 0 && <h1>Her var det tomt! Hva med å lage noen spørsmål?</h1> }
+                { questions.length == 0 && <h1>Her var det tomt! Kanskje du kan lage noen spørsmål?</h1> }
                 { questions.length > 0 && <Table>
                     <thead>
                         <TableRow>
