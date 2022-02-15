@@ -40,7 +40,6 @@ Her går vi gjennom Firestore database Collections, Documents, Data. Snapshot, s
 Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-collection. Går gjennom Authentication-fanen i Firebase. Ser på hva Auth-objektet er. Osv. 
 
 # Oppgaver
-- Sign in anonymously
 - Registrere en bruker med epost
 - Registrere en bruker med Google Provider
 - Legg inn funksjonalitet for å logge inn med epost
@@ -56,12 +55,13 @@ Fram til nå har vi ikke hatt noen kontroll på hvem som kan legge til spørsmå
 - Se til at en innlogget bruker får en oversikt over sine spørsmål.
 - En admin bruker skal kunne se alle spørsmål som er lagt inn.
 - Brukeren som har laget et spørsmål, og en admin skal kunne slette spørsmål.
-- Gjør slik at de som har rollen User eller Admin er de som kan lage en quiz. Vi tillater ikke anonyme brukere å gjøre dette.
+- Gjør slik at det kun er de som er logget som kan lage en quiz. 
 
 # Ekstraoppgaver
 - Gjør "Lag Quiz"-funksjonaliteten om til en **Firebase Function** som kalles på. Obs. Dette vil kreve at du oppgraderer Firebase-kontoen din fra Spark til Blaze. https://firebase.google.com/pricing. Det vil i stor grad fortsatt være gratis å bruke, men du må legge til betalingsopplysninger. I tillegg vil vi sterkt anbefale å sette opp varsling dersom det viser seg at månedsregningen går over et visst beløp. Da dette da trolig er noe du bør sjekke opp. 
-- Sette opp **Security Rules** for database tilgangen. Det er med Security Rules man sikrer database-tilganger på den riktige måten.
+- Sette opp **Security Rules** for database tilgangen. Det er med Security Rules man sikrer database-tilganger på den riktige måten. https://firebase.google.com/docs/rules
 - **Firebase Emulator Suite**. Sett opp Emulator for å ikke lese / skrive direkte fra prod-databasen. https://firebase.google.com/docs/emulator-suite
 - Test ut **Firebase Storage**. Hva med å legge til muligheten for at et quiz-spørsmål kan være et bilde? Med Firebase Storage får du tilgjengelig lagringsplass til ditt Firebase prosjekt der brukerne kan laste opp f.eks bilder. 
 - Legg til flere kategorier til et Quiz-spørmål. Et spørmsål kan f.eks være av typen Sport, Musikk, Politikk. Deretter kan du utvide funksjonaliteten ved "Lag Quiz" til å også kun gjelde visse kategorier.
 - Sett opp mulighet for flere autentiseringsproviders. Firebase, Github, Twitter, Microsoft.
+- Sign-in **anonymously**. Test ut funksjonaliteten rundt anonyme brukere. For disse kan man ha Security Rules selv om de ikke har opprettet en bruker. De kan så bli knyttet opp til en reel bruker, og ha med seg sin data videre. https://firebase.google.com/docs/auth/web/anonymous-auth . 
