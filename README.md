@@ -4,6 +4,10 @@ I denne workshopen skal vi ta for oss noen av de mest grunnleggende elementene i
 ## Antatte forkunnskaper
 Vi kommer til å anta at deltakerne i denne workshopen har en grunnleggende forståelse for webutvikling generelt, og moderne JavaScript spesielt. Vi kommer til å benytte oss av React og TypeScript, så det er en fordel om du har noe kjennskap til dette. 
 
+## Forhåndskrav
+- Node 15?
+- Google konto
+- Github
 
 ## Om applikasjonen
 Vi skal lage en Quiz-generator applikasjon. I applikasjonen skal brukerne kunne legge til spørsmål og svar, se en oversikt over sine spørsmål, samt generere en quiz basert på alle de spørsmålene og svarene som er lagt inn i databasen. Vi kommer til å starte uten noe brukerstyring, men vi vil etterhvert utvide slik at det er kun registrerte brukere som kan lage spørsmål og quiz, og at det er brukerne som er admin som kan se en oversikt over det til en hver tid alle spørsmålene som ligger inne. På en slik måte kan man be folk legge inn ulike quiz-spørsmål, og få generert en quiz med et utvalg av spørsmålene i databasen.
@@ -13,12 +17,46 @@ Vi skal lage en Quiz-generator applikasjon. I applikasjonen skal brukerne kunne 
 Her går vi gjennom hvordan flyten, oppsett, hosting, firebase config, deployment, firebase init etc. fungerer
 Alle skal få applikasjonen opp å kjøre på sin Firebase konto før vi går videre
 
+# Oppgaver
+- Sett opp nytt eget Firebase-prosjekt 
+- Klon prosjektet
+- Oppdatér Firebase config
+- Oppdatér Github Secrets fra Google
+- Deploy appen og se til at den kommer opp å kjøre
+
+
 # Del 2 - Firestore
 Her går vi gjennom Firestore database Collections, Documents, Data. Snapshot, stream data, Datastruktur etc.
 
-# Del 3 - Autentisering
-Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-collection. Går gjennom Authentication-fanen i Firebase. Ser på hva Auth-objektet er. Osv.
+# Oppgaver
+- Legg til et dokument i databasen
+- Hent et dokument fra databasen
+- Endre et dokument fra databasen
+- Slett et dokument fra databasen
+- Hent alle dokumenter fra databasen. Forsøk å hent dokumentene både som vanlig get og stream.
+- Lage en Quiz med et utvalg av spørsmålen fra databasen
 
+# Del 3 - Autentisering
+Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-collection. Går gjennom Authentication-fanen i Firebase. Ser på hva Auth-objektet er. Osv. 
+
+# Oppgaver
+- Sign in anonymously
+- Registrere en bruker med epost
+- Registrere en bruker med Google Provider
+- Legg inn funksjonalitet for å logge inn med epost
+- Legg inn funksjonalitet for å logge inn med Google
+- Legge inn Logg ut funksjonalitet
+- Legge inn Passord reset funksjonalitet. Finner du også ut hvordan du kan pynte på mailen som sendes ut fra Firebase?
+- Legge til en bruker i en Users-collection ved registrering for å holde på informasjon om brukeren. 
+
+# Del 4 - Koble tilgangsstyring til funksjonaliteten i applikasjonen
+Fram til nå har vi ikke hatt noen kontroll på hvem som kan legge til spørsmål, legge til spørsmål og lage quiz. Samtidig har vi nå lagt til støtte for dette ved å koble på autentisering i applikasjonen. Nå er tiden inne for å knytte disse to sammen, slik at vi får litt kontroll på de som bruker applikasjonen.
+
+# Oppgaver
+- Se til at en innlogget bruker får en oversikt over sine spørsmål.
+- En admin bruker skal kunne se alle spørsmål som er lagt inn.
+- Brukeren som har laget et spørsmål, og en admin skal kunne slette spørsmål.
+- Gjør slik at de som har rollen User eller Admin er de som kan lage en quiz. Vi tillater ikke anonyme brukere å gjøre dette.
 
 # Ekstraoppgaver
 - Gjør "Lag Quiz"-funksjonaliteten om til en **Firebase Function** som kalles på. Obs. Dette vil kreve at du oppgraderer Firebase-kontoen din fra Spark til Blaze. https://firebase.google.com/pricing. Det vil i stor grad fortsatt være gratis å bruke, men du må legge til betalingsopplysninger. I tillegg vil vi sterkt anbefale å sette opp varsling dersom det viser seg at månedsregningen går over et visst beløp. Da dette da trolig er noe du bør sjekke opp. 
