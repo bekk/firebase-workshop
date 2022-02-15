@@ -7,7 +7,6 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-
     const [user, setUser] = useState();
     
     useEffect(() =>{
@@ -22,13 +21,13 @@ function Login() {
     return (
         <LoginWrapper>
             <LoginContainer>
-                <TextBox
+                <Input
                     type="text"
                     value={ email }
                     onChange={ (e) => setEmail(e.target.value) }
-                    placeholder="E-post"
+                    placeholder="Epost"
                 />           
-                <TextBox
+                <Input
                     type="password"
                     value={ password }
                     onChange={ (e) => setPassword(e.target.value) }
@@ -68,7 +67,7 @@ const LoginContainer = styled.div`
     background-color: #dcdcdc;
     padding: 30px;
 `
-const TextBox = styled.input`
+const Input = styled.input`
    padding: 10px;
     font-size: 18px;
     margin-bottom: 10px;

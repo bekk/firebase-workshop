@@ -16,7 +16,7 @@ function Reset() {
     }, []);
 
     useEffect(() => {
-        if (user) navigate('/dashboard');
+        if (user) navigate('/');
     }, [user, navigate]);
 
     return (
@@ -24,12 +24,11 @@ function Reset() {
             <ResetContainer>
                 <Input
                     type="text"
-                    className="reset__textBox"
                     value={ email }
                     onChange={ (e) => setEmail(e.target.value) }
-                    placeholder="Din epost"
+                    placeholder="Epost"
                 />
-                <Button className="reset__btn" onClick={ () => sendPasswordReset(email) }>
+                <Button onClick={ () => sendPasswordReset(email) }>
                     Send passord reset mail
                 </Button>
 

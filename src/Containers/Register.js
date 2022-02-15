@@ -35,19 +35,17 @@ function Register() {
                 />                
                 <Input
                     type="text"
-                    className="register__textBox"
                     value={ email }
                     onChange={ (e) => setEmail(e.target.value) }
                     placeholder="E-postadresse"
                 />
                 <Input
                     type="password"
-                    className="register__textBox"
                     value={ password }
                     onChange={ (e) => setPassword(e.target.value) }
                     placeholder="Passord"
                 />
-                <Button className="register__btn" onClick={ () => registerWithEmailAndPassword(name, email, password) }>
+                <Button onClick={ () => registerWithEmailAndPassword(name, email, password) }>
                     Registrer
                 </Button>
                 <Button
