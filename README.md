@@ -1,6 +1,6 @@
 # UNDER ARBEID
 
-# Grunnleggende Firebase workshop
+# Grunnleggende Firebase 9 workshop
 I denne workshopen skal vi ta for oss noen av de mest grunnleggende elementene innenfor Firebase-plattformen. Vi kommer til å fokusere på bruke av Hosting, Firestore og Autentisering, men for de som ønsker så kan applikasjonen også utvides med både Functions og Storage. 
 
 ## Antatte forkunnskaper
