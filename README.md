@@ -22,8 +22,8 @@ Alle skal få applikasjonen opp å kjøre på sin Firebase konto før vi går vi
 # Oppgaver
 - Sett opp nytt eget Firebase-prosjekt 
 - Klon prosjektet
-- Oppdatér Firebase config
-- Oppdatér Github Secrets fra Google
+- Oppdater Firebase config
+- Oppdater Github Secrets fra Google
 - Deploy appen og se til at den kommer opp å kjøre
 
 
