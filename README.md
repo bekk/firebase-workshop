@@ -17,6 +17,8 @@ Vi kommer til å anta at deltakerne i denne workshopen har en grunnleggende fors
 - Node 16
 - Google konto
 - Github
+- Terminal
+- IDE f.eks VS Code
 
 # [Del 1 - Hosting, deploy og oppsett](./_Oppgaver_/Del 1 - Hosting, deploy og oppsett/Del 1 - Hosting, deploy og oppsett)
 
