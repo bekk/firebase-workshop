@@ -25,13 +25,8 @@ todo introduksjon
 1. Åpne en ny terminal (eller bare terminer den kjørende applikasjonen med ctrl+c) og skriv <code>firebase projects:list</code>
 2. Kopier Project ID 
 3. Åpne filen <code>.firebasesrc</code> og endre default project til din Project ID
-4. Skriv <code>firebase deploy</code>
+4. Skriv <code>npm build</code> etterfulgt av <code>firebase deploy --only hosting</code>
 5. Prosjektet kjører nå på internett! 🎉
-
-
-TODOS: 
-* Hadde en del problemer med linteren. Fikk den ikke til å spille på lag. 
-* Jeg fikk problemer med  `Parsing error: Cannot read file 'functions/tsconfig.json'`. Vet ikke helt hva det betyr
 
 ## Steg 5:
 Oppdater Github Secrets fra Google
