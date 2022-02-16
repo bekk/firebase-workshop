@@ -28,44 +28,31 @@ Vi vil i først del fokusere på å sette opp en ny Firebase-applikasjon, klone 
 
 [Løsningsforslag - Del 1](/_Løsningsforslag_/Del%201%20-%20Hosting,%20deploy%20og%20oppsett/README.md)
 
-# Oppgaver
-
-- Sett opp nytt eget Firebase-prosjekt
-- Klon prosjektet
-- Oppdater Firebase config
-- Oppdater Github Secrets fra Google
-- Deploy appen og se til at den kommer opp å kjøre
-
 # Del 2 - Firestore
 
 Her går vi gjennom Firestore database Collections, Documents, Data. Snapshot, stream data, Datastruktur etc.
 
-# Oppgaver
+[Oppgaver - Del 2](/_Oppgaver_/Del%202%20-%20Firestore/README.md)
 
-- Legg til et dokument i databasen
-- Hent et dokument fra databasen
-- Endre et dokument fra databasen
-- Slett et dokument fra databasen
-- Hent alle dokumenter fra databasen. Forsøk å hent dokumentene både som vanlig get og stream.
-- Lage en Quiz med et utvalg av spørsmålen fra databasen
+[Løsningsforslag - Del 2](/_Løsningsforslag_/Del%202%20-%20Firestore/README.md)
+
 
 # Del 3 - Autentisering
 
 Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-collection. Går gjennom Authentication-fanen i Firebase. Ser på hva Auth-objektet er. Osv.
 
-# Oppgaver
+[Oppgaver - Del 3](/_Oppgaver_/Del%203%20-%20Autentisering/README.md)
 
-- Registrere en bruker med epost
-- Registrere en bruker med Google Provider
-- Legg inn funksjonalitet for å logge inn med epost
-- Legg inn funksjonalitet for å logge inn med Google
-- Legge inn Logg ut funksjonalitet
-- Legge inn Passord reset funksjonalitet. Finner du også ut hvordan du kan pynte på mailen som sendes ut fra Firebase?
-- Legge til en bruker i en Users-collection ved registrering for å holde på informasjon om brukeren.
+[Løsningsforslag - Del 3](/_Løsningsforslag_/Del%302%20-%20Autentisering/README.md)
+
 
 # Del 4 - Koble tilgangsstyring til funksjonaliteten i applikasjonen
 
 Fram til nå har vi ikke hatt noen kontroll på hvem som kan legge til spørsmål, legge til spørsmål og lage quiz. Samtidig har vi nå lagt til støtte for dette ved å koble på autentisering i applikasjonen. Nå er tiden inne for å knytte disse to sammen, slik at vi får litt kontroll på de som bruker applikasjonen.
+
+[Oppgaver - Del 4](/_Oppgaver_/Del%204%20-%20Sy%20det%20sammen/README.md)
+
+[Løsningsforslag - Del 4](/_Løsningsforslag_/Del%204%20-%20Sy%20det%20sammen/README.md)
 
 # Oppgaver
 
