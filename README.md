@@ -36,14 +36,6 @@ Her går vi gjennom Firestore database Collections, Documents, Data. Snapshot, s
 
 [Løsningsforslag - Del 2](/_Løsningsforslag_/Del%202%20-%20Firestore/README.md)
 
-# Oppgaver
-
-- Legg til et dokument i databasen
-- Hent et dokument fra databasen
-- Endre et dokument fra databasen
-- Slett et dokument fra databasen
-- Hent alle dokumenter fra databasen. Forsøk å hent dokumentene både som vanlig get og stream.
-- Lage en Quiz med et utvalg av spørsmålen fra databasen
 
 # Del 3 - Autentisering
 
@@ -53,15 +45,6 @@ Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-colle
 
 [Løsningsforslag - Del 3](/_Løsningsforslag_/Del%302%20-%20Autentisering/README.md)
 
-# Oppgaver
-
-- Registrere en bruker med epost
-- Registrere en bruker med Google Provider
-- Legg inn funksjonalitet for å logge inn med epost
-- Legg inn funksjonalitet for å logge inn med Google
-- Legge inn Logg ut funksjonalitet
-- Legge inn Passord reset funksjonalitet. Finner du også ut hvordan du kan pynte på mailen som sendes ut fra Firebase?
-- Legge til en bruker i en Users-collection ved registrering for å holde på informasjon om brukeren.
 
 # Del 4 - Koble tilgangsstyring til funksjonaliteten i applikasjonen
 
