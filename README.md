@@ -7,9 +7,11 @@ I denne workshopen skal vi ta for oss noen av de mest grunnleggende elementene i
 Vi kommer til å anta at deltakerne i denne workshopen har en grunnleggende forståelse for webutvikling generelt, og moderne JavaScript spesielt. Vi kommer til å benytte oss av React og TypeScript, så det er en fordel om du har noe kjennskap til dette. 
 
 ## Forhåndskrav
-- Node 15?
+- Node 14
 - Google konto
 - Github
+- Terminal 
+- IDE f.eks VS Code
 
 ## Om applikasjonen
 Vi skal lage en Quiz-generator applikasjon. I applikasjonen skal brukerne kunne legge til spørsmål og svar, se en oversikt over sine spørsmål, samt generere en quiz basert på alle de spørsmålene og svarene som er lagt inn i databasen. Vi kommer til å starte uten noe brukerstyring, men vi vil etterhvert utvide slik at det er kun registrerte brukere som kan lage spørsmål og quiz, og at det er brukerne som er admin som kan se en oversikt over det til en hver tid alle spørsmålene som ligger inne. På en slik måte kan man be folk legge inn ulike quiz-spørsmål, og få generert en quiz med et utvalg av spørsmålene i databasen.
@@ -21,6 +23,19 @@ Alle skal få applikasjonen opp å kjøre på sin Firebase konto før vi går vi
 
 # Oppgaver
 - Sett opp nytt eget Firebase-prosjekt 
+
+<details>
+1. Gå til console.firebase.google.com
+2. Logg inn eller opprett bruker
+3. Lag et nytt prosjekt
+4. Gi prosjektet et navn - eks. "bekk-workshop-quiz"
+5. Du kan godt skru av Analytics for prosjektet
+6. Firebase-prosjektet er opprettet! 🎉
+
+7. Gå så til terminalen og innstallere Firebase tools <code>$ npm install -g firebase-tools</code> (https://github.com/firebase/firebase-tools)
+8. Når Firebase tools er installert kan du skrive <code>firebase login</code> å logge inn
+</details>
+
 - Klon prosjektet
 - Oppdater Firebase config
 - Oppdater Github Secrets fra Google
