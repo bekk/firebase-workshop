@@ -24,7 +24,7 @@ Vi kommer til å anta at deltakerne i denne workshopen har en grunnleggende fors
 
 Vi vil i først del fokusere på å sette opp en ny Firebase-applikasjon, klone denne applikasjonen, slik at vi kan jobbe videre på den som utgangspunkt. Knytte ditt Firebase-prosjekt til din versjon av Quiz generatoren og deploye applikasjonen slik at den dukker opp på din Firebase-konto.
 
-[Oppgaver](./_Oppgaver_/Del 1 - Hosting, deploy og oppsett/Del 1 - Hosting, deploy og oppsett))
+[Oppgaver](/_Oppgaver_/Del 1 - Hosting, deploy og oppsett/Del 1 - Hosting, deploy og oppsett)
 
 # Oppgaver
 
