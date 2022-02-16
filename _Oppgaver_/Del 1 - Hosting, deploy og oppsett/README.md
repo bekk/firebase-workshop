@@ -7,3 +7,10 @@
 6.  Firebase-prosjektet er opprettet! 🎉
 7.  Gå så til terminalen og innstallere Firebase tools <code>$ npm install -g firebase-tools</code> (https://github.com/firebase/firebase-tools)
 8.  Når Firebase tools er installert kan du skrive <code>firebase login</code> å logge inn
+
+
+Sett opp nytt eget Firebase-prosjekt
+Klon prosjektet
+Oppdater Firebase config
+Oppdater Github Secrets fra Google
+Deploy appen og se til at den kommer opp å kjøre
