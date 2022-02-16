@@ -36,7 +36,6 @@ Her går vi gjennom Firestore database Collections, Documents, Data. Snapshot, s
 
 [Løsningsforslag - Del 2](/_Løsningsforslag_/Del%202%20-%20Firestore/README.md)
 
-
 # Del 3 - Autentisering
 
 Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-collection. Går gjennom Authentication-fanen i Firebase. Ser på hva Auth-objektet er. Osv.
@@ -45,21 +44,13 @@ Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-colle
 
 [Løsningsforslag - Del 3](/_Løsningsforslag_/Del%302%20-%20Autentisering/README.md)
 
-
-# Del 4 - Koble tilgangsstyring til funksjonaliteten i applikasjonen
+# Del 4 - Sy det sammen
 
 Fram til nå har vi ikke hatt noen kontroll på hvem som kan legge til spørsmål, legge til spørsmål og lage quiz. Samtidig har vi nå lagt til støtte for dette ved å koble på autentisering i applikasjonen. Nå er tiden inne for å knytte disse to sammen, slik at vi får litt kontroll på de som bruker applikasjonen.
 
 [Oppgaver - Del 4](/_Oppgaver_/Del%204%20-%20Sy%20det%20sammen/README.md)
 
 [Løsningsforslag - Del 4](/_Løsningsforslag_/Del%204%20-%20Sy%20det%20sammen/README.md)
-
-# Oppgaver
-
-- Se til at en innlogget bruker får en oversikt over sine spørsmål.
-- En admin bruker skal kunne se alle spørsmål som er lagt inn.
-- Brukeren som har laget et spørsmål, og en admin skal kunne slette spørsmål.
-- Gjør slik at det kun er de som er logget som kan lage en quiz.
 
 # Ekstraoppgaver
 
