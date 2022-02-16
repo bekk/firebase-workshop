@@ -1,4 +1,4 @@
-1.  Gå til [Firebase Console](www.console.firebase.google.com)
+1.  Gå til [Firebase Console](https://www.console.firebase.google.com)
 2.  Logg inn eller opprett bruker
 3.  Lag et nytt prosjekt
 4.  Gi prosjektet et navn - eks. "bekk-workshop-quiz"
