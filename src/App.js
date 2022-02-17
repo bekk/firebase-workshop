@@ -1,6 +1,6 @@
 import React  from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './utils/firebase';
+import './firebase';
 
 import Home from './Containers/Home';
 import Login from './Containers/Login'

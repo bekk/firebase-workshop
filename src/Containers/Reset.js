@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { auth, sendPasswordReset } from '../utils/firebase';
+import { auth, sendPasswordReset } from '../firebase';
 
 function Reset() {
     const [email, setEmail] = useState('');
@@ -29,7 +29,7 @@ function Reset() {
                     placeholder="Epost"
                 />
                 <Button onClick={ () => sendPasswordReset(email) }>
-                    Send passord reset mail
+                    Send reset passord mail
                 </Button>
 
                 <div>

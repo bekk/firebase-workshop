@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { getCurrentUserId, streamQuestions } from '../utils/firebase';
+import { getCurrentUserId, streamQuestions } from '../firebase';
 
 
 const QuestionRow = ({question, onClick} ) => {
