@@ -21,6 +21,17 @@ todo introduksjon
 4. Nettleseren åpnes og "Quiz Generator" kjører på [localhost:3000](http://localhost:3000/)
 5. Prosjektet kjører nå lokalt! 🎉
 
+## Steg 3A:
+1. For å koble ditt lokale prosjekt med firebase må vi gjøre en rask konfigurering. Det starter vi ved å skrive inn
+<code>firebase init</code>.
+2. Følg instruksene, på første steg velger <code>Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys</code>
+3. Velg kontoen du har registrert firebaseprosjektet til.
+4. Som ditt public directory skriver du <code>build</code>. Her vil vår nettside bli bygget til.
+5. Velg <code>y</code> til at det skal være en single-page-application.
+6. Svar <code>N</code> til Github actions oppsettet. Dette skal vi gjøre senere.
+7. Hvis du får beskjed om at <code>File build/index.html already exists</code> svarer du <code>N</code> til spørsmålet om du skal overskrive filen.
+8. Og med det er du koblet opp mot firebase 🎉!
+
 ## Steg 4: Sett opp Firebase config
 1. Åpne en ny terminal (eller bare terminer den kjørende applikasjonen med ctrl+c) og skriv <code>firebase projects:list</code>
 2. Kopier Project ID 
