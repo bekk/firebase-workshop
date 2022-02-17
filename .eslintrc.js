@@ -13,10 +13,7 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:jest/recommended",
         "plugin:testing-library/react",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
     ],
-    parser: "@typescript-eslint/parser", // Uses babel-eslint transforms.
     parserOptions: {
         ecmaFeatures: {
             jsx: true
@@ -31,7 +28,6 @@ module.exports = {
         "@babel/",
         "flowtype",
         "import",
-        "@typescript-eslint"
     ],
     root: true, // For configuration cascading.
     rules: {
