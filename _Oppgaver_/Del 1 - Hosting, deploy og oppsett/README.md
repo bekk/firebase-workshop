@@ -40,7 +40,4 @@ todo introduksjon
 5. Prosjektet kjører nå på internett! 🎉
 
 ## Steg 5:
-Oppdater Github Secrets fra Google
-
-## Steg 6:
 Deploy appen og se til at den kommer opp å kjøre
