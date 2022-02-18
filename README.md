@@ -1,5 +1,3 @@
-# UNDER ARBEID
-
 # Grunnleggende Firebase workshop (Firebase v9)
 
 I denne workshopen skal vi ta for oss noen av de mest grunnleggende elementene innenfor Firebase-plattformen. Vi kommer til å fokusere på å bli kjent med Hosting, Firestore og Autentisering. Og for de aller ivrigste, så kan denne applikasjonen utvides videre med Firebase Functions og Firebase Storage.
@@ -10,13 +8,13 @@ Vi skal lage en Quiz generator applikasjon. I applikasjonen skal brukerne kunne 
 
 ## Antatte forkunnskaper
 
-Vi kommer til å anta at deltakerne i denne workshopen har en grunnleggende forståelse for webutvikling generelt, og moderne JavaScript spesielt. Vi kommer til å benytte oss av React og Javascript, så det er en fordel om du har noe kjennskap til dette.
+Vi kommer til å anta at deltakerne i denne workshopen har en grunnleggende forståelse for webutvikling generelt, og moderne JavaScript spesielt. Vi kommer til å benytte oss av React, så det er en fordel om du har noe kjennskap til dette.
 
 ## Forhåndskrav
 
 - Node 16
-- Google konto
-- Github
+- Google-konto
+- Github-konto
 - Terminal
 - IDE f.eks VS Code
 
