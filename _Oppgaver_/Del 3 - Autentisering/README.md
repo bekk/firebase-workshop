@@ -5,3 +5,8 @@
 - Legge inn Logg ut funksjonalitet
 - Legge inn Passord reset funksjonalitet. Finner du også ut hvordan du kan pynte på mailen som sendes ut fra Firebase?
 - Legge til en bruker i en Users-collection ved registrering for å holde på informasjon om brukeren.
+
+Ekstraoppgaver
+
+- Legg til flere autentiseringsproviders. Github, Twitter, osv.
+- Se om du kan oppdatere mailen som sendes ut fra Firebase ved opprettelse av bruker, glemt passord og slikt.

@@ -85,7 +85,23 @@ const deleteQuestion = (id) => {
 };
 ```
 
-## Hent alle dokumenter fra databasen. Forsøk å hent dokumentene både som vanlig get og stream.
+## Hent dokumenter fra databasen.
+
+Det finnes flere måter å hente ut dokumenter fra Firestore på. `getDocs` er den enkleste varianten der du, tilsvarende som med henting av et dokument, henter
+
+Dokumentasjon https://firebase.google.com/docs/firestore/query-data/get-data#get_multiple_documents_from_a_collection
+
+```js
+// Firebase
+import { getDocs, collection } from "firebase/firestore";
+
+const getQuestions = () => {
+  const questionsRef = collection(db, "questions");
+  return getDocs(questionsRef);
+};
+
+// View
+```
 
 ## Lage en Quiz med et utvalg av spørsmålen fra databasen
 
@@ -108,4 +124,38 @@ const createQuiz = async (numberOfQuestions) => {
     .sort(() => Math.random() - Math.random())
     .slice(0, numberOfQuestions);
 };
+```
+
+# Ekstra - Hent dokumenter med real-time update
+
+```js
+// Firebase
+import { collection, query, onSnapshot } from "firebase/firestore";
+
+const streamQuestions = async (snapshot, error) => {
+  const questionsRef = collection(db, "questions");
+  let questionsQuery = query(questionsRef);
+
+  return onSnapshot(questionsQuey, snapshot, error);
+};
+
+// View
+const [questions, setQuestions] = useState([]);
+
+useEffect(() => {
+  const unsubscribe = streamQuestions(
+    (querySnapshot) => {
+      if (!querySnapshot) console.log("Fant ingen spørsmål");
+      const questionItems = querySnapshot.docs.map((docSnapshot) => {
+        return {
+          id: docSnapshot.id,
+          ...docSnapshot.data(),
+        };
+      });
+      setQuestions(questionItems);
+    },
+    (error) => console.log(error)
+  );
+  return unsubscribe;
+}, []);
 ```
