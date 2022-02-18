@@ -141,7 +141,7 @@ const createQuiz = async (numberOfQuestions) => {
 // Firebase
 import { collection, query, onSnapshot } from "firebase/firestore";
 
-const streamQuestions = async (snapshot, error) => {
+const streamQuestions = (snapshot, error) => {
   const questionsRef = collection(db, "questions");
   let questionsQuery = query(questionsRef);
 
