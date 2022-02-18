@@ -10,9 +10,13 @@ En bruker skal altså kunne skrive inn et spørsmål og svar på nettsiden, og s
 
 Se til spørsmålet du legger inn dukker opp i din Firestore collection
 
+![Legg til spørsmål](/resources/createQuestion.png)
+
 ## Hent et dokument fra databasen
 
 Når du går inn på url'en ( http://localhost:3000/question/{id} ) med id tilsvarende det spørsmålet du nettopp la til i Firestore-databasen, så skal dette spørsmål bli fylt ut i input-feltene.
+
+![Legg til spørsmål](/resources/editQuestion.png)
 
 ## Endre et dokument fra databasen
 
@@ -25,6 +29,8 @@ Lag funksjonalitet for å slette et spørsmål fra databasen.
 ## Hent mange dokumenter fra databasen.
 
 Fram til nå har vi forholdt oss til et og et spørsmål, men nå ønsker vi å gjøre slik at du kan liste opp alle de spørsmålene som du har lagt inn.
+
+![Legg til spørsmål](/resources/getQuestions.png)
 
 ## Lage en Quiz
 
