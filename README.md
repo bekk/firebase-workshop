@@ -26,8 +26,6 @@ Vi vil i først del fokusere på å sette opp en ny Firebase-applikasjon, klone 
 
 [Oppgaver - Del 1](/_Oppgaver_/Del%201%20-%20Hosting,%20deploy%20og%20oppsett/README.md)
 
-[Løsningsforslag - Del 1](/_Løsningsforslag_/Del%201%20-%20Hosting,%20deploy%20og%20oppsett/README.md)
-
 # Del 2 - Firestore
 
 Her går vi gjennom Firestore database Collections, Documents, Data. Snapshot, stream data, Datastruktur etc.
