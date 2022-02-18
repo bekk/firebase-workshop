@@ -8,7 +8,7 @@ Første oppgave blir å legge til et nytt spørsmål i din Firestore database fr
 
 En bruker skal altså kunne skrive inn et spørsmål og svar på nettsiden, og så skal dette bli lagt inn i databasen.
 
-Se til spørsmålet du legger inn dukker opp i din Firestore collection
+Se til at spørsmålet du legger inn dukker opp i din Firestore collection.
 
 ![Legg til spørsmål](/resources/createQuestion.png)
 
@@ -26,22 +26,22 @@ Legg til mulighet for å kunne endre på et eksisterende spørsmål i databasen.
 
 Lag funksjonalitet for å slette et spørsmål fra databasen.
 
-## Hent mange dokumenter fra databasen.
+## Hent mange dokumenter fra databasen
 
 Fram til nå har vi forholdt oss til et og et spørsmål, men nå ønsker vi å gjøre slik at du kan liste opp alle de spørsmålene som du har lagt inn.
 
 ![Legg til spørsmål](/resources/getQuestions.png)
 
-## Lage en Quiz
+## Lag en Quiz
 
-Lag en quiz med et utvalg av spørsmålene fra databasen. Foreløpig vil jo denne quiz'en kun bestå av dine spørsmål, men etterhvert i workshopen så skal vi få koble på autentisering, og da vil vi få mulighet til å generere en Quiz med spørsmål som også er lagt inn av andre brukere.
+Lag en quiz med et utvalg av spørsmålene fra databasen. Foreløpig vil denne quizen kun bestå av dine spørsmål, men i neste del av workshopen skal vi koble på autentisering, og da vil vi få mulighet til å generere en quiz med spørsmål som også er lagt inn av andre brukere.
 
-Du kan jo f.eks la brukeren som skal generere en quiz få mulighet til å velge hvor mange spørsmål hen vil ha listet opp.
+Du kan jo f.eks la brukeren som skal generere en quiz få mulighet til å velge hvor mange spørsmål hen vil ha listet opp?
 
 ## Ekstraoppgaver
 
 - Sett opp henting av dokumenter med real-time oppdatering.
-- Legg til tidspunkt for når dokumentet ble laget og når det ble oppdatert
+- Legg til tidspunkt for når dokumentet ble laget og når det ble oppdatert.
 - Legg til flere felt per spørsmåls-dokument. F.eks kategori.
-- Sett en custom id til et spørsmåls-dokument
-- Hent ut kun de spørsmål som er laget etter et gitt tidspunkt
+- Sett en custom id til et spørsmåls-dokument.
+- Hent ut kun de spørsmål som er laget etter et gitt tidspunkt.
