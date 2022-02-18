@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link  } from 'react-router-dom';
 import styled from 'styled-components';
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from '../firebase';
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-    const [user, setUser] = useState();
     
-    useEffect(() =>{
-        const unsubscribe = auth.onAuthStateChanged(authUser => authUser ? setUser(authUser) : setUser(null));
-        return () => unsubscribe();
-    }, []);
-
-    useEffect(() => {
-        if (user) navigate('/');
-    }, [user, navigate]);
-
     return (
         <LoginWrapper>
             <LoginContainer>
@@ -33,12 +21,10 @@ function Login() {
                     onChange={ (e) => setPassword(e.target.value) }
                     placeholder="Passord"
                 />
-                <Button
-                    onClick={ () => logInWithEmailAndPassword(email, password) }
-                >
+                <Button>
                     Log inn
                 </Button>
-                <Button style={ {  backgroundColor: '#4285f4'} } onClick={ signInWithGoogle }>
+                <Button style={ {  backgroundColor: '#4285f4'} }>
                     Log inn med Google
                 </Button>
                 <div>

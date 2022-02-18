@@ -1,40 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { getCurrentUserId, streamQuestions } from '../firebase';
-
-
-const QuestionRow = ({question, onClick} ) => {
-    return ( <TableRow onClick={ onClick }>
-        <TableData>{ question.title }</TableData>
-        <TableData>{ question.answer }</TableData>
-    </TableRow>)
-}
 
 
 const Questions = () => {  
     const navigate = useNavigate();
-    const [questions, setQuestions] = useState([]);
-
-    useEffect(() => {
-        const unsubscribe = streamQuestions(
-            (querySnapshot) => {
-                if(!querySnapshot) console.log('Fant ingen spørsmål')
-                const questionItems = querySnapshot.docs.map(docSnapshot => {
-                    return {
-                        id: docSnapshot.id,
-                        ...docSnapshot.data()
-                    }
-
-                });
-                setQuestions(questionItems);
-            },
-            (error) => console.log(error), 
-            getCurrentUserId()
-        );
-        return unsubscribe;
-    }, [setQuestions]);
-
 
     return (
         <>
@@ -43,8 +13,7 @@ const Questions = () => {
             </div>
             <QuestionsContainer>
                 <QuestionsHeader>Spørsmål</QuestionsHeader>
-                { questions.length == 0 && <InfoText>Her var det tomt! Kanskje du vil lage noen spørsmål? <br/><br/> Eller logge inn, hvis du ikke har gjort det :) </InfoText> }
-                { questions.length > 0 && <Table>
+                <Table>
                     <thead>
                         <TableRow>
                             <TableDataHead>Spørsmål</TableDataHead>
@@ -52,11 +21,8 @@ const Questions = () => {
                         </TableRow>
                     </thead>
                     <tbody>
-                        { questions.map((question, index) => {
-                            return <QuestionRow question={ question } key={ index } onClick={ () => navigate(`/question/${question.id}`) }/>
-                        }) }
                     </tbody>
-                </Table> }          
+                </Table>      
             </QuestionsContainer>
         </>
     );
@@ -74,18 +40,6 @@ const TableDataHead = styled.td`
     padding: 5px;
     font-weight: bold;
 `
-const TableData = styled.td`
-    padding: 5px;
-    cursor: pointer;
-`
-
-const InfoText = styled.h1`
-    align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: center;
-`
-
 const QuestionsContainer = styled.div`
     margin: 1em;
     display: flex;

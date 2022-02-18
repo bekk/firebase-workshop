@@ -1,20 +1,10 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-
-
-const QuestionRow = ({question } ) => {
-    return ( <tr>
-        <TableData>{ question.title }</TableData>
-        <TableData>{ question.answer }</TableData>
-        <TableData>{ question.createdByName }</TableData>
-    </tr>)
-}
 
 
 const Quiz = () => {  
     const navigate = useNavigate()
-    const { state } = useLocation();
 
     return (
         <>
@@ -32,9 +22,6 @@ const Quiz = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        { state.map((question, index) => {
-                            return <QuestionRow question={ question } key={ index }/>
-                        }) }
                     </tbody>
                 </Table>              
             </QuestionsContainer>
@@ -48,9 +35,6 @@ const Table = styled.table`
 const TableDataHead = styled.td`
     padding: 5px;
     font-weight: bold;
-`
-const TableData = styled.td`
-    padding: 5px;
 `
 const QuestionsContainer = styled.div`
     margin: 1em;

@@ -1,37 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import {createOrUpdateQuestion, deleteQuestion, getQuestion} from '../firebase';
-
 
 
 const Question = () => {  
     const navigate = useNavigate();
-
-    const [question, setQuestion] = useState({});
-    const [error, setError] = useState('');
     const { id } = useParams()
-
-    useEffect(() => {
-        if(!id) return
-        getQuestion(id)
-            .then(querySnapshot => {
-                const question = querySnapshot.data()
-                setQuestion(question);
-            })
-    }, [id]);
-
-
-    const onSubmit = (id) => {
-        createOrUpdateQuestion(question, id)
-            .then(() => navigate('/'))
-            .catch(error => setError(error))
-    }
-
-    const onDelete = (id) => {
-        if(!id) return navigate('/')
-        deleteQuestion(id).then(() => navigate('/'))
-    }
 
     return (
         <>
@@ -43,18 +17,17 @@ const Question = () => {
                 <Form>
                     <FormField>
                         <label style={ {marginBottom: '0.5em'} } htmlFor="title">Spørsmål</label>
-                        <textarea rows="2" cols="50" type="text" value={ question.title } name="question" id="question"  onChange={ e => setQuestion({ ...question, title: e.target.value }) }/>
+                        <textarea rows="2" cols="50" type="text"  name="question" id="question"  />
                     </FormField>
                     <FormField>
                         <label style={ {marginBottom: '0.5em'} } htmlFor="answer">Svar</label>
-                        <textarea rows="1" cols="50" type="text" value={ question.answer } name="answer" id="answer"  onChange={ e => setQuestion({ ...question, answer: e.target.value }) }/>
+                        <textarea rows="1" cols="50" type="text"  name="answer" id="answer"  />
                     </FormField>
                 </Form>
                 <ButtonsContainer>
-                    <SaveButton onClick={ () => onSubmit(id) }>Lagre</SaveButton>
-                    <DeleteButton onClick={ () => onDelete(id) }>Slett</DeleteButton>
+                    <SaveButton>Lagre</SaveButton>
+                    <DeleteButton>Slett</DeleteButton>
                 </ButtonsContainer>
-                { error && <h1 style={ {color: '#D885A3', marginTop: '1em'} }>{ error.toString() }</h1> }
             </QuestionContainer>
         </>
 

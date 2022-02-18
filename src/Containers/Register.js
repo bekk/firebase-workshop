@@ -1,28 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import {
-    auth,
-    registerWithEmailAndPassword,
-    signInWithGoogle,
-} from '../firebase';
+
 
 function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [user, setUser] = useState();
 
-    const navigate = useNavigate();
-
-    useEffect(() =>{
-        const unsubscribe = auth.onAuthStateChanged(authUser => authUser ? setUser(authUser) : setUser(null));
-        return () => unsubscribe();
-    }, []);
-
-    useEffect(() => {
-        if (user) navigate('/');
-    }, [user, navigate]);
 
     return (
         <RegisterWrapper>
@@ -45,12 +30,11 @@ function Register() {
                     onChange={ (e) => setPassword(e.target.value) }
                     placeholder="Passord"
                 />
-                <Button onClick={ () => registerWithEmailAndPassword(name, email, password) }>
+                <Button>
                     Registrer
                 </Button>
                 <Button
                     style={ {backgroundColor: '#4285f4'} }
-                    onClick={ signInWithGoogle }
                 >
                     Registrer med Google
                 </Button>

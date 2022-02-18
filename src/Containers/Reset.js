@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { auth, sendPasswordReset } from '../firebase';
 
 function Reset() {
     const [email, setEmail] = useState('');
-    const navigate = useNavigate();
-
-    const [user, setUser] = useState();
-    
-    useEffect(() =>{
-        const unsubscribe = auth.onAuthStateChanged(authUser => authUser ? setUser(authUser) : setUser(null));
-        return () => unsubscribe();
-    }, []);
-
-    useEffect(() => {
-        if (user) navigate('/');
-    }, [user, navigate]);
-
+ 
     return (
         <ResetWrapper>
             <ResetContainer>
@@ -28,7 +14,7 @@ function Reset() {
                     onChange={ (e) => setEmail(e.target.value) }
                     placeholder="Epost"
                 />
-                <Button onClick={ () => sendPasswordReset(email) }>
+                <Button>
                     Send reset passord mail
                 </Button>
 
