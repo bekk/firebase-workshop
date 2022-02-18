@@ -87,7 +87,7 @@ const deleteQuestion = (id) => {
 
 ## Hent dokumenter fra databasen.
 
-Det finnes flere måter å hente ut dokumenter fra Firestore på. `getDocs` er den enkleste varianten der du, tilsvarende som med henting av et dokument, henter
+Det finnes flere måter å hente ut dokumenter fra Firestore på. `getDocs` er den enkleste varianten der du, tilsvarende som med henting av et dokument, henter mange. Men det finnes også en annen måte, der du lytter til realtime oppdateringer av dokumenter fra databasen. `onSnapshot`. Den metoden er vist lenger ned i denne filen.
 
 Dokumentasjon https://firebase.google.com/docs/firestore/query-data/get-data#get_multiple_documents_from_a_collection
 
@@ -101,6 +101,15 @@ const getQuestions = () => {
 };
 
 // View
+const [questions, setQuestions] = useState([]);
+
+useEffect(() => {
+  getQuestions()
+    .then((questionsSnapshots) =>
+      setQuestions(questionsSnapshots.docs.map((q) => q.data()))
+    )
+    .catch((e) => console.log(e));
+}, []);
 ```
 
 ## Lage en Quiz med et utvalg av spørsmålen fra databasen
