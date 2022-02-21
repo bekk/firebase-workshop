@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-
 
 const Question = () => {  
     const navigate = useNavigate();
     const { id } = useParams()
+    const [question, setQuestion] = useState({});
 
     return (
         <>
@@ -17,11 +17,11 @@ const Question = () => {
                 <Form>
                     <FormField>
                         <label style={ {marginBottom: '0.5em'} } htmlFor="title">Spørsmål</label>
-                        <textarea rows="2" cols="50" type="text"  name="question" id="question"  />
+                        <textarea rows="2" cols="50" type="text"  name="question" id="question"  onChange={ e => setQuestion({ ...question, title: e.target.value }) } />
                     </FormField>
                     <FormField>
                         <label style={ {marginBottom: '0.5em'} } htmlFor="answer">Svar</label>
-                        <textarea rows="1" cols="50" type="text"  name="answer" id="answer"  />
+                        <textarea rows="1" cols="50" type="text"  name="answer" id="answer"  onChange={ e => setQuestion({ ...question, answer: e.target.value }) }/>
                     </FormField>
                 </Form>
                 <ButtonsContainer>
