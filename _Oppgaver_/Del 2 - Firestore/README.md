@@ -2,9 +2,13 @@
 
 Vi skal nå begynne å få vår web-applikasjon til å snakke med vår ferske Firestore database.
 
-- Oppsett av firebase config
-- Create Database - Start in Test mode (Velg f.eks Europe location)
-- Legg til en collection "Questions"
+## Sett opp Firebase config
+
+Først må du sette opp `firebaseConfig` i filen `firebase.js`. Slik at du kan begynne å kommunisere med ditt Firebase-prosjekt
+
+## Lag database
+
+Før du kan begynne å legge til dokumenter må du opprette en database i Firestore Database. Gå til Firebase consolen. Firebase Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks lokasjon i Europa.
 
 ## Legg til et dokument
 
