@@ -2,6 +2,10 @@
 
 Vi skal nå begynne å få vår web-applikasjon til å snakke med vår ferske Firestore database.
 
+- Oppsett av firebase config
+- Create Database - Start in Test mode (Velg f.eks Europe location)
+- Legg til en collection "Questions"
+
 ## Legg til et dokument
 
 Første oppgave blir å legge til et nytt spørsmål i din Firestore database fra koden.
