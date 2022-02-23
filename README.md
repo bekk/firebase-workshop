@@ -52,4 +52,4 @@ Fram til nå har vi ikke hatt noen kontroll på hvem som kan legge til spørsmå
 
 For de som har lyst til på flere oppgaver.
 
-[Oppgaver - Del 4](/_Oppgaver_/Ekstraoppgaver/README.md)
+[Oppgaver - Del 5](/_Oppgaver_/Ekstraoppgaver/README.md)
