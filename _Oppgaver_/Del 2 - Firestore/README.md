@@ -1,6 +1,6 @@
 # Oppgaver Del 2 - Firestore
 
-Vi skal nå begynne å få vår web-applikasjon til å snakke med vår ferske Firestore database.
+Vi skal nå begynne å få vår web-applikasjon til å snakke med vår helt egen databse i Firestore.
 
 ## Sett opp Firebase config
 
