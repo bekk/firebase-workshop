@@ -10,6 +10,11 @@ Først må du sette opp `firebaseConfig` i filen `firebase.js`. Slik at du kan b
 
 Før du kan begynne å legge til dokumenter må du opprette en database i Firestore Database. Gå til Firebase consolen, velg Firestore Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks lokasjon i Europa.
 
+## Last ned verktøyene som hører til firestore i CLI-en.
+
+Kjør en ny firebase init i prosjektmappen din, og denne gangen velger du: <br />
+<code>Firestore: Configure security rules and indexes files for Firestore</code>
+
 ## Legg til et dokument
 
 Første oppgave blir å legge til et nytt spørsmål i din Firestore database fra koden.
