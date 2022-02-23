@@ -8,7 +8,7 @@ Først må du sette opp `firebaseConfig` i filen `firebase.js`. Slik at du kan b
 
 ## Lag database
 
-Før du kan begynne å legge til dokumenter må du opprette en database i Firestore Database. Gå til Firebase consolen. Firebase Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks lokasjon i Europa.
+Før du kan begynne å legge til dokumenter må du opprette en database i Firestore Database. Gå til Firebase consolen, velg Firestore Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks lokasjon i Europa.
 
 ## Legg til et dokument
 
