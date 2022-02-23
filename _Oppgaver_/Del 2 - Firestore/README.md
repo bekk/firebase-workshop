@@ -14,8 +14,7 @@ Før du kan begynne å legge til dokumenter må du opprette en database i Firest
 
 Kjør en ny firebase init i prosjektmappen din, og denne gangen velger du: <br />
 <code>Firestore: Configure security rules and indexes files for Firestore</code>
-I dialogen kan du velge de default-verdiene som dukker opp. Så trykk Enter og fortsett til du får <br />
-<code> ✔Firebase initialization complete! </code>
+I dialogen kan du velge de default-verdiene som dukker opp. Så trykk Enter og fortsett til du får <code> ✔Firebase initialization complete! </code>
 
 ## Legg til et dokument
 
