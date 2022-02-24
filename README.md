@@ -4,11 +4,13 @@ I denne workshopen skal vi ta for oss noen av de mest grunnleggende elementene i
 
 ## Om applikasjonen
 
-Vi skal lage en Quiz generator applikasjon. I applikasjonen skal brukerne kunne legge til spørsmål og svar, se en oversikt over sine spørsmål, samt generere en Quiz basert på alle de spørsmålene og svarene som er lagt inn i databasen. Vi kommer til å starte uten noe brukerstyring, men vi vil etterhvert utvide slik at det er kun registrerte brukere som kan lage spørsmål og quiz, og at det er brukerne som er admin som kan se en oversikt over det til en hver tid alle spørsmålene som ligger inne. På en slik måte kan man be folk legge inn ulike quiz-spørsmål, og få generert en quiz med et utvalg av spørsmålene i databasen.
+Vi skal lage en quiz-generator-applikasjon. I applikasjonen skal brukerne kunne legge til spørsmål og svar, se en oversikt over sine spørsmål, samt generere en quiz basert på alle de spørsmålene og svarene som er lagt inn i databasen.
+
+Vi kommer til å starte uten noe brukerstyring, men vi vil etterhvert utvide slik at det er kun registrerte brukere som kan lage spørsmål og quiz, og at det er admin-brukerne som kan se en oversikt over det til en hver tid alle spørsmålene som ligger inne. På en slik måte kan man be folk legge inn ulike quiz-spørsmål, og få generert en quiz med et utvalg av spørsmålene i databasen.
 
 ## Antatte forkunnskaper
 
-Vi kommer til å anta at deltakerne i denne workshopen har en grunnleggende forståelse for webutvikling generelt, og moderne JavaScript spesielt. Vi kommer til å benytte oss av React, så det er en fordel om du har noe kjennskap til dette.
+Vi antar at deltakerne i denne workshopen har en grunnleggende forståelse for webutvikling generelt, og moderne JavaScript spesielt. Vi bruker React, så det er en fordel om du har noe kjennskap til dette.
 
 ## Forhåndskrav
 
@@ -20,7 +22,7 @@ Vi kommer til å anta at deltakerne i denne workshopen har en grunnleggende fors
 
 # Del 1 - Hosting, deploy og oppsett
 
-Vi vil i først del fokusere på å sette opp en ny Firebase-applikasjon, klone denne applikasjonen, slik at vi kan jobbe videre på den som utgangspunkt. Knytte ditt Firebase-prosjekt til din versjon av Quiz generatoren og deploye applikasjonen slik at den dukker opp på din Firebase-konto.
+Vi vil i første del fokusere på å sette opp en ny Firebase-applikasjon og klone denne koden, slik at vi kan jobbe videre på den som utgangspunkt. Vi skal knytte ditt Firebase-prosjekt til din versjon av quiz-generatoren og deploye applikasjonen slik at den dukker opp på din Firebase-konto.
 
 [Oppgaver - Del 1](/_Oppgaver_/Del%201%20-%20Hosting,%20deploy%20og%20oppsett/README.md)
 
