@@ -2,6 +2,13 @@
 
 Før man kan begynne å kalle på Firestore må først sette opp firebaseConfig til sitt prosjekt og så initalisere appen.
 
+1. Gå til Project Settings i [Firebase Console](https://console.firebase.google.com)
+2. Klikk "Add app" under Your Apps nederst
+    1. Velg Web App
+    2. Gi appen et kult navn, for eksempel Quiz Game
+    3. Huk av på "also setup hosting.." og velg den du satte opp tidligere
+3. Kopier `firebaseConfig` objektet i kodevinduet
+
 ```js
 import { initializeApp } from "firebase/app";
 
