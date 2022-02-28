@@ -40,7 +40,7 @@ Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-colle
 
 [Oppgaver - Del 3](/_Oppgaver_/Del%203%20-%20Autentisering/README.md)
 
-[Løsningsforslag - Del 3](/_Løsningsforslag_/Del%302%20-%20Autentisering/README.md)
+[Løsningsforslag - Del 3](/_Løsningsforslag_/Del%203%20-%20Autentisering/README.md)
 
 # Del 4 - Sy det sammen
 

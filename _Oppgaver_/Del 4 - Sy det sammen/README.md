@@ -12,10 +12,6 @@ En innlogget bruker må kunne se de spørsmålene som brukeren har lagt inn, og 
 
 En bruker av typen admin skal kunne ha full kontroll i applikasjonen og kunne administrere alle spørsmål som er lagt inn i databasen.
 
-## Både brukeren som har lagt inn spørsmålet og admin-brukere, skal kunne slette et spørsmål
-
-Både de som har lagt inn spørsmål og admin brukere skal kunne slette spørsmål som er lagt inn.
-
 ## Kun innloggede brukere skal kunne lage en quiz
 
 Vi ønsker ikke at hvem som helst skal kunne lage en quiz. Derfor kan vi sette en begrensning om at kun de som er innlogget er de som kan lage en quiz.
