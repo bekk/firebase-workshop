@@ -22,10 +22,10 @@ function Login() {
                     placeholder="Passord"
                 />
                 <Button>
-                    Log inn
+                    Logg inn
                 </Button>
                 <Button style={ {  backgroundColor: '#4285f4'} }>
-                    Log inn med Google
+                    Logg inn med Google
                 </Button>
                 <div>
                     <Link to="/reset">Glemt passord?</Link>
@@ -54,7 +54,7 @@ const LoginContainer = styled.div`
     padding: 30px;
 `
 const Input = styled.input`
-   padding: 10px;
+    padding: 10px;
     font-size: 18px;
     margin-bottom: 10px;
 `
