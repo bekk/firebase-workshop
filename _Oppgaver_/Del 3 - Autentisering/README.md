@@ -4,7 +4,8 @@ I denne delen av oppgavesettet skal vi sette opp autentisering via Firestore Aut
 Dokumentasjonen om Firebase Authentication finner du [her](https://firebase.google.com/docs/auth).
 
 ## Registrere din første bruker med Firebase Authentication
-![Registrer med firebase](/resources/registerWithFirebase.png)
+
+<img alt="Registrer med firebase" src="/resources/registerWithFirebase.png" width="200"/>
 
 Opprett en bruker i Firebase via grensesnittet. Gå inn i Firbare Console og registrer en bruker med e-post og passord.
 
