@@ -15,6 +15,10 @@ const Home = () => {
                 <button  onClick={ () => navigate('question') }>Legg til nytt spørsmål</button>
                 <button style={ {marginLeft: '1em'} } onClick={ () => navigate('questions') }>Mine spørsmål</button>
             </ButtonsContainer>
+            <UserManagementContainer>
+                <button onClick={ () => navigate('/login') }>Log inn</button>
+                <button style={ {marginLeft: '1em'} } onClick={ () => navigate('/register') }>Registrer</button>
+            </UserManagementContainer>
         </Container>
     );
 }
@@ -47,5 +51,16 @@ const CreateQuizButton = styled.button`
     padding: 4em;
     color: white;
 `
+
+const UserManagementContainer = styled.div`
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+`
+
 
 export default Home;
