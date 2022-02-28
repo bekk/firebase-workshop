@@ -5,18 +5,19 @@ Dokumentasjonen om Firebase Authentication finner du [her](https://firebase.goog
 
 ## Registrere din første bruker med Firebase Authentication
 
-<img alt="Registrer med firebase" src="/resources/registerWithFirebase.png" width="200"/>
+<img alt="Registrer med firebase" src="/resources/registerWithFirebase.png" width="500"/>
 
 Opprett en bruker i Firebase via grensesnittet. Gå inn i Firbare Console og registrer en bruker med e-post og passord.
 
 ## Logge inn med e-post og passord
-![Logg inn med epost](/resources/loginWithEmail.png)
+
+<img alt="Logg inn med epost" src="/resources/loginWithEmail.png" width="500"/>
 
 Implementer støtte for å logge inn i appen med e-post og passord. Du må gjerne utvide eksisterende skjema fra ``Login.js``. Skjemaet finner du på http://localhost:3000/login 
 
 ## Registrere bruker med e-post og passord fra appen
 
-![Registrer bruker med e-post](/resources/registerWithEmail.png)
+<img alt="Registrer bruker med e-post" src="/resources/registerWithEmail.png" width="500"/>
 
 Skriv kode for å registrere en bruker med e-post og passord i Firebase. Bruk registreringsskjemaet fra ``Register.js`` - http://localhost:3000/register
 
