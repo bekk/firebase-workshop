@@ -1,6 +1,6 @@
 # Løsningsforslag for Del 3 Autentisering
 
-## Registrering av bruker med e-post
+## Registrering av bruker med epost
 
 Dette kan gjøres manuelt via Firebase-grensesnittet eller med kode.
 
@@ -74,6 +74,40 @@ export const signInWithGoogle = async () => {
 
 Fra view-komponenten kan du nå bare kalle på `signInWithGoogle`-metoden for å logge inn med Google.
 
+## Logg inn med epost
+
+Send inn epost og passord fra view-komponenten til følgende metode for å logge inn med brukernavn og passord
+
+```javascript
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+const logInWithEmailAndPassword = async (email, password) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err) {
+    console.error(err);
+  }
+};
+```
+
+## Logg inn med Google
+
+For å logge inn med Google kaller du på funksjonen `signInWithPopup` og sender med `auth` og `googleProvider`.
+
+```javascript
+import { signInWithPopup } from "firebase/auth";
+
+const googleProvider = new GoogleAuthProvider();
+
+const signInWithGoogle = async () => {
+  try {
+    const res = await signInWithPopup(auth, googleProvider);
+  } catch (err) {
+    console.error(err);
+  }
+};
+```
+
 ## Logg ut-funksjonalitet
 
 For å logge ut trenger du bare å kalle på en funksjon
@@ -118,6 +152,30 @@ export const registerWithEmailAndPassword = async (name, email, password) => {
       authProvider: "email",
       email,
     });
+  } catch (err) {
+    console.error(err);
+  }
+};
+```
+
+Det kan også være praktisk å utvide logg inn med Google funksjonaliteten til å også legge til et dokument i `Users`-collection dersom dette ikke ligger inne, og om det ikke blir lagt til ved registrering.
+
+```javascript
+const signInWithGoogle = async () => {
+  try {
+    const res = await signInWithPopup(auth, googleProvider);
+    const user = res.user;
+    const q = query(collection(db, "users"), where("uid", "==", user.uid));
+    const docs = await getDocs(q);
+    if (docs.docs.length === 0) {
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
+        name: user.displayName,
+        role: "user",
+        authProvider: "google",
+        email: user.email,
+      });
+    }
   } catch (err) {
     console.error(err);
   }
