@@ -4,17 +4,21 @@ Vi skal nå begynne å få vår web-applikasjon til å snakke med vår helt egen
 
 ## Sett opp Firebase config
 
-Først må du sette opp `firebaseConfig` i filen `firebase.js`. Slik at du kan begynne å kommunisere med ditt Firebase-prosjekt
+Det første vi skal jeg gjøre er å fylle ut `firebaseConfig` i filen `firebase.js`. Dette trenger vi for å kunne kommunisere med firestore. 
 
-## Lag database
+### Lag database
 
-Før du kan begynne å legge til dokumenter må du opprette en database i Firestore Database. Gå til Firebase consolen, velg Firestore Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks lokasjon i Europa.
+Før du kan koble til firestore og legge til dokumenter må vi gi Google beskjed om å opprette en database i Firestore Database for oss. Gå til Firebase-konsollen, velg Firestore Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks en lokasjon i Europa.
 
-## Last ned verktøyene som hører til firestore i CLI-en.
+### Last ned verktøyene som hører til firestore i CLI-en.
 
 Kjør en ny firebase init i prosjektmappen din, og denne gangen velger du: <br />
 <code>Firestore: Configure security rules and indexes files for Firestore</code>
 I dialogen kan du velge de default-verdiene som dukker opp. Så trykk Enter og fortsett til du får <code> ✔Firebase initialization complete! </code>
+
+Husk å legge til firestore i deploy:
+
+<code>firebase deploy --only hosting,firestore</code> 
 
 ## Legg til et dokument
 

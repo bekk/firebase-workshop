@@ -16,7 +16,7 @@ const Home = () => {
                 <button style={ {marginLeft: '1em'} } onClick={ () => navigate('questions') }>Mine spørsmål</button>
             </ButtonsContainer>
             <UserManagementContainer>
-                <button onClick={ () => navigate('/login') }>Log inn</button>
+                <button onClick={ () => navigate('/login') }>Logg inn</button>
                 <button style={ {marginLeft: '1em'} } onClick={ () => navigate('/register') }>Registrer</button>
             </UserManagementContainer>
         </Container>

@@ -28,7 +28,7 @@ todo introduksjon
 
 1. For å koble ditt lokale prosjekt med Firebase må vi gjøre en rask konfigurering. Det starter vi ved å skrive inn
    <code>firebase init</code>.
-2. Følg instruksene. På første steg velg: <br />
+2. Følg instruksene (se bildet under). På første steg velg: <br />
    <code>Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys</code> <br />
 3. Velg kontoen du har registrert firebase-prosjektet til.
 4. Som ditt public directory skriver du <code>build</code>. Her vil vår nettside bli bygget til.
@@ -36,6 +36,10 @@ todo introduksjon
 6. Svar <code>N</code> til Github actions oppsettet.
 7. Hvis du får beskjed om at <code>File build/index.html already exists</code> svarer du <code>N</code> til spørsmålet om du skal overskrive filen.
 8. Og med det er du koblet opp mot firebase 🎉!
+
+
+![Noe slikt som dette](/resources/firebaseSetupHosting.png)
+
 
 ## Steg 5: Send appen ut på internett
 
