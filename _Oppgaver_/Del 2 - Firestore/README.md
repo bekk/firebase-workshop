@@ -13,12 +13,32 @@ Før du kan koble til firestore og legge til dokumenter må vi gi Google beskjed
 ### Last ned verktøyene som hører til firestore i CLI-en.
 
 Kjør en ny firebase init i prosjektmappen din, og denne gangen velger du: <br />
-<code>Firestore: Configure security rules and indexes files for Firestore</code>
-I dialogen kan du velge de default-verdiene som dukker opp. Så trykk Enter og fortsett til du får <code> ✔Firebase initialization complete! </code>
 
-Husk å legge til firestore i deploy:
+<code>Firestore: Configure security rules and indexes files for Firestore</code>
+
+Velg default-verdiene som dukker opp ved å trykke Enter til du får 
+
+<code> ✔Firebase initialization complete! </code>
+
+### Legg til firebaseConfig i firebase.js
+Siste oppsett er å hente ut config fra firebasekonsollen.
+
+Gå til Project Settings i [Firebase Console](https://console.firebase.google.com). 
+
+Klikk "Add Web App" under `Your Apps` nederst 
+
+Gi appen et kult navn, for eksempel Quiz Game 2000 🧠 
+
+Huk av på "also setup hosting.." og velg den du satte opp tidligere.
+
+Kopier `firebaseConfig` objektet i til utklippstavla og sett det inn der det hører hjemme i `firebase.js`.
+
+Nå er appen din klar til å kobles til firestore! 🎉
+
+💡 Husk å legge til firestore i deploy-scriptet:
 
 <code>firebase deploy --only hosting,firestore</code> 
+
 
 ## Legg til et dokument
 
