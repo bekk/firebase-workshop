@@ -7,23 +7,28 @@ Dokumentasjonen om Firebase Authentication finner du [her](https://firebase.goog
 
 <img alt="Registrer med firebase" src="/resources/registerWithFirebase.png" width="500"/>
 
-Opprett en bruker i Firebase via grensesnittet. Gå inn i Firbare Console og registrer en bruker med e-post og passord.
+Opprett en bruker i Firebase via grensesnittet. Gå inn i Firebase Console og registrer en bruker med e-post og passord. Husk passordet! Du skal logge inn med denne brukeren snart.
+
+> 💡 Du må legge til appen din i Firestore for å få Firestore Authentication til å virke. Dette kan gjøres ved å følge veiledningen under "Project Settings" i [Firebase Console](https://console.firebase.google.com)
 
 ## Logge inn med e-post og passord
 
 <img alt="Logg inn med epost" src="/resources/loginWithEmail.png" width="500"/>
 
-Implementer støtte for å logge inn i appen med e-post og passord. Du må gjerne utvide eksisterende skjema fra `Login.js`. Skjemaet finner du på http://localhost:3000/login
+Kult! Du har nå registrert en bruker i Firebase. Implementer støtte for å logge inn i appen med e-post og passord. 
+Det er litt kode i `Login.js` du kan bruke som utgangspunkt for implementasjonen. 
 
 ## Registrere bruker med e-post og passord fra appen
 
 <img alt="Registrer bruker med e-post" src="/resources/registerWithEmail.png" width="500"/>
 
-Skriv kode for å registrere en bruker med e-post og passord i Firebase. Bruk registreringsskjemaet fra `Register.js` - http://localhost:3000/register
+Det er ikke veldig skalerbart hvis du må registrere alle brukere manuelt 🥵 La oss gjøre noe med det! 
+Skriv kode for å registrere en bruker med e-post og passord i Firebase. Det burde gjøre susen. Bruk registreringsskjemaet fra `Register.js` som utgangspunkt.
 
 ## Registrere en bruker med Google Provider
 
-Skriv kode for å registrere en bruker med Google Provider. Utvid funksjonaliteten i `Register.js` til å åpne et vindu med Google-autentisering når man klikker på "Registrer med Google".
+Mange syntes det er masete å huske på brukernavn og passord til alle de ulike nettsidene de besøker. Heldigvis har Firebase støtte for Google-registrering! 
+Implementer støtte for å registrere seg med sin Google-bruker. Utvid funksjonaliteten i `Register.js` til å åpne et vindu med Google-autentisering når man klikker på "Registrer med Google".
 
 ## Logge inn med Google Provider
 
