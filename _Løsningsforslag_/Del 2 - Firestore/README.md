@@ -16,6 +16,7 @@ import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "DITT_PROSJEKT_API_KEY",
+  authDomain: "DITT_AUTH_DOMAIN",
   projectId: "DITT_PROSJEKT_PROJECT_ID",
   appId: "DITT_PROSJEKT_APP_ID",
 };
