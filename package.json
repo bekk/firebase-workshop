@@ -16,9 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "firebase deploy --only hosting",
-    "lint": "eslint -c .eslintrc.js --ext .js,.jsx .",
-    "lint:fix": "npm run lint -- --fix"
+    "deploy": "firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": [
@@ -27,14 +25,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@babel/eslint-parser": "^7.16.5",
-    "@babel/eslint-plugin": "^7.16.5",
     "@babel/preset-react": "^7.16.7",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
-    "@types/styled-components": "^5.1.22",
-    "eslint": "^8.6.0",
-    "eslint-plugin-prettier": "^4.0.0"
+    "@types/styled-components": "^5.1.22"
   },
   "browserslist": {
     "production": [
