@@ -8,11 +8,11 @@ Vi antar at deltakerne i denne workshopen har en grunnleggende forståelse for w
 
 ## Forhåndskrav 💾
 
-- Node 16
+- Node 16 - https://nodejs.org/en/download/
 - Google-konto
-- Github-konto
-- Terminal
-- IDE f.eks VS Code
+- Github-konto https://github.com/
+- Terminal (f.eks. iTerm for Mac eller Terminal for Windows)
+- En IDE f.eks. VS Code (https://code.visualstudio.com/)
 
 ## Om applikasjonen 🏋️
 
