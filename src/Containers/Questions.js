@@ -5,6 +5,14 @@ import styled from 'styled-components';
 
 const Questions = () => {  
     const navigate = useNavigate();
+    
+    const QuestionRow = ({question} ) => {
+        return ( 
+        <TableRow>
+            <TableData>{ question.title }</TableData>
+            <TableData>{ question.answer }</TableData>
+        </TableRow>)
+    }
 
     return (
         <>
@@ -21,6 +29,7 @@ const Questions = () => {
                         </TableRow>
                     </thead>
                     <tbody>
+                        {/* Here you can insert your QuestionRow */}
                     </tbody>
                 </Table>      
             </QuestionsContainer>
@@ -35,6 +44,11 @@ const TableRow = styled.tr`
     &:hover {
       font-weight: bold;
     }  
+`
+const TableData = styled.td`
+    padding: 5px;
+    cursor: pointer;
+
 `
 const TableDataHead = styled.td`
     padding: 5px;
