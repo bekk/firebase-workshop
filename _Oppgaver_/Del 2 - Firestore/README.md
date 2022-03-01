@@ -37,7 +37,7 @@ Nå er appen din klar til å kobles til firestore! 🎉
 
 💡 Husk å legge til firestore i deploy-scriptet:
 
-<code>firebase deploy --only hosting,firestore</code> 
+<code>firebase deploy --only hosting</code> 
 
 
 ## Legg til et dokument
