@@ -35,10 +35,6 @@ Kopier `firebaseConfig` objektet i til utklippstavla og sett det inn der det hø
 
 Nå er appen din klar til å kobles til firestore! 🎉
 
-💡 Husk å legge til firestore i deploy-scriptet:
-
-<code>firebase deploy --only hosting</code> 
-
 
 ## Legg til et dokument
 
