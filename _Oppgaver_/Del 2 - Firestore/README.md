@@ -44,7 +44,7 @@ Første oppgave blir å legge til et nytt spørsmål i din Firestore database fr
 
 En bruker skal altså kunne skrive inn et spørsmål og svar på nettsiden, og så skal dette bli lagt inn i din database.
 
-Se til at spørsmålet du legger inn dukker opp i din Firestore collection.
+Når du ser at spørsmålet du legger inn dukker opp i din Firestore collection er du ferdig og klar for neste oppgave 🥇
 
 ![Legg til spørsmål](/resources/createQuestion.png)
 
@@ -75,6 +75,8 @@ Lag en quiz med et utvalg av spørsmålene fra databasen. Foreløpig vil denne q
 Du kan jo f.eks la brukeren som skal generere en quiz få mulighet til å velge hvor mange spørsmål hen vil ha listet opp?
 
 ## Ekstraoppgaver
+
+Under har du et sett med ekstraoppgaver som kan gjøres for å gjøre quiz-nettsiden enda bedre. Eller så kan du arbeide med egne forbedringer og ideer.
 
 - Sett opp henting av dokumenter med real-time oppdatering.
 - Legg til tidspunkt for når dokumentet ble laget og når det ble oppdatert.
