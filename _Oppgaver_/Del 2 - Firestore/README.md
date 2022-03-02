@@ -38,9 +38,11 @@ Nå er appen din klar til å kobles til firestore! 🎉
 
 ## Legg til et dokument
 
-Første oppgave blir å legge til et nytt spørsmål i din Firestore database fra koden.
+Så akkurat nå kan brukeren din skrive inn et spørsmål og svar, og trykke på lagre. Men bak den ytre skjer det ingenting. Dette skal vi nå fikse 🛠!
 
-En bruker skal altså kunne skrive inn et spørsmål og svar på nettsiden, og så skal dette bli lagt inn i databasen.
+Første oppgave blir å legge til et nytt spørsmål i din Firestore database fra din nettside. 
+
+En bruker skal altså kunne skrive inn et spørsmål og svar på nettsiden, og så skal dette bli lagt inn i din database.
 
 Se til at spørsmålet du legger inn dukker opp i din Firestore collection.
 
