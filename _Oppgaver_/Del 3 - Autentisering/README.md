@@ -32,22 +32,24 @@ Implementer støtte for å registrere seg med sin Google-bruker. Utvid funksjona
 
 ## Logge inn med Google Provider
 
-Implementer logg inn med Google. Når man klikker på "Logg inn med Google" skal man kunne loggge inn med sin egen Google konto. Utvid funksjonaliteten i `Login.js` til å støtte dette.
+Nice! Bra jobba! Nå er det på tide å logge inn med Google kontoen. Implementer logg inn med Google når man klikker på "Logg inn med Google"-knappen. 
+Utvid funksjonaliteten i `Login.js`. 
 
 ## Logg ut funksjonalitet
 
-Legge inn Logg ut funksjonalitet
+Når man kan logge inn, må man kunne logge ut også.. Er du ikke enig? 😏 Legg inn funksjonalitet for å kunne logge ut av kontoen igjen.
 
 ## Nullstill passord
 
-Legge inn Passord reset funksjonalitet. Bonus: finner du også ut hvordan du kan pynte på mailen som sendes ut fra Firebase?
+Det er helt vanlig å glemme passord! Legg til kode som lar deg nullstille passordet. 
 
 ## Beholde info om bruker
 
-Legge til en bruker i en Users-collection ved registrering for å holde på informasjon om brukeren.
+Nå begynner det å bli spennende. Lag en ny Firestore-collection for brukerinformasjon. Når en bruker registrerer seg i appen skal de bli lagret her. 
+Det fikser du! 
 
-### Ekstraoppgaver
+### Ekstraoppgaver 💅
 
-- Bytt ut autentiseringskomponentene med med [Firebase UI](https://github.com/firebase/firebaseui-web)
-- Legg til flere autentiseringsproviders. Github, Twitter, osv.
 - Se om du kan oppdatere mailen som sendes ut fra Firebase ved opprettelse av bruker, glemt passord og slikt.
+- Legg til flere autentiseringsproviders. Github, Twitter, osv.
+- Bytt ut autentiseringskomponentene med med [Firebase UI](https://github.com/firebase/firebaseui-web)
