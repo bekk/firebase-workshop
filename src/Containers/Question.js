@@ -1,11 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { createQuestion, deleteQuestion, getQuestion } from '../firebase'
+
 
 const Question = () => {  
     const navigate = useNavigate();
     const { id } = useParams()
     const [question, setQuestion] = useState({});
+
+    const onSaveButtonClick = () => {
+        createQuestion(question)
+        navigate('/')
+    }
+
+    const onDeleteButtonClick = () => {
+        deleteQuestion(id)
+        navigate('/')
+    }
+
+    useEffect(() => {
+        if(id) {
+            getQuestion()
+                .then((questionSnapshot) =>
+                    setQuestion(questionSnapshot.data())
+                )
+                .catch((e) => console.log(e));
+        }
+      }, [id]);
 
     return (
         <>
@@ -25,8 +47,8 @@ const Question = () => {
                     </FormField>
                 </Form>
                 <ButtonsContainer>
-                    <SaveButton>Lagre</SaveButton>
-                    <DeleteButton>Slett</DeleteButton>
+                    <SaveButton onClick={() => onSaveButtonClick() }>Lagre</SaveButton>
+                    <DeleteButton onClick={() => onDeleteButtonClick() }>Slett</DeleteButton>
                 </ButtonsContainer>
             </QuestionContainer>
         </>
