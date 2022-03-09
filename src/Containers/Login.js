@@ -1,11 +1,35 @@
 import React, { useState } from 'react';
-import { Link  } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import styled from 'styled-components';
+import { logInWithEmailAndPassword, signInWithGoogle } from '../firebase';
 
 function Login() {
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
+    /*
+        Man kan her lage en useEffect for å lytte på endringer i innloggings-state dersom man ønsker å gjøre en handling før man f.eks navigererer tilbake.
+
+        useEffect(() =>{
+            const auth = getAuth()
+            const unsubscribe = onAuthStateChanged(auth, authUser => authUser ? setUser(authUser) : setUser(null));
+            return () => unsubscribe();
+        }, []);
+        console.log(user)
+    */
+
+    const onLoginWithEmailAndPassword = () => {
+        logInWithEmailAndPassword(email, password)
+        navigate('/')
+    }
+
+    const onGoogleSignIn = () => {
+        signInWithGoogle()
+        navigate('/')
+    }
+
     return (
         <LoginWrapper>
             <LoginContainer>
@@ -21,10 +45,10 @@ function Login() {
                     onChange={ (e) => setPassword(e.target.value) }
                     placeholder="Passord"
                 />
-                <Button>
+                <Button onClick={() => onLoginWithEmailAndPassword()}>
                     Logg inn
                 </Button>
-                <Button style={ {  backgroundColor: '#4285f4'} }>
+                <Button onClick={() => onGoogleSignIn()} style={ {  backgroundColor: '#4285f4'} }>
                     Logg inn med Google
                 </Button>
                 <div>
