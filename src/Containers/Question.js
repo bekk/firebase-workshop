@@ -52,8 +52,8 @@ const Question = () => {
                     </FormField>
                 </Form>
                 <ButtonsContainer>
-                    <SaveButton onClick={() => onSaveButtonClick()}>Lagre</SaveButton>
-                    <DeleteButton onClick={() => onDeleteButtonClick()}>Slett</DeleteButton>
+                    <SaveButton onClick={() => onSaveButtonClick() }>Lagre</SaveButton>
+                    <DeleteButton onClick={() => onDeleteButtonClick() }>Slett</DeleteButton>
                 </ButtonsContainer>
             </QuestionContainer>
         </>

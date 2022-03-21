@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { sendPasswordReset } from '../firebase'
 
 function Reset() {
     const [email, setEmail] = useState('');
  
+    const onSendResetPassword = () => {
+        sendPasswordReset(email)
+    }
+      
     return (
         <ResetWrapper>
             <ResetContainer>
@@ -14,7 +19,7 @@ function Reset() {
                     onChange={ (e) => setEmail(e.target.value) }
                     placeholder="Epost"
                 />
-                <Button>
+                <Button onClick={() => onSendResetPassword()}>
                     Send reset passord mail
                 </Button>
 

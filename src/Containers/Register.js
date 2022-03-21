@@ -1,13 +1,36 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { registerWithEmailAndPassword, signInWithGoogle } from "../firebase";
 
 
 function Register() {
+    const navigate = useNavigate();
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    /*
+        Man kan her lage en useEffect for å lytte på endringer i innloggings-state dersom man ønsker å gjøre en handling før man f.eks navigererer tilbake.
+
+        useEffect(() =>{
+            const auth = getAuth()
+            const unsubscribe = onAuthStateChanged(auth, authUser => authUser ? setUser(authUser) : setUser(null));
+            return () => unsubscribe();
+        }, []);
+        console.log(user)
+    */
+
+    const onRegisterUserWithEmailAndPassword = () => {
+        registerWithEmailAndPassword(name, email, password)
+        navigate('/')
+    }
+
+    const onGoogleSignIn = () => {
+        signInWithGoogle()
+        navigate('/')
+    }
 
     return (
         <RegisterWrapper>
@@ -30,10 +53,10 @@ function Register() {
                     onChange={ (e) => setPassword(e.target.value) }
                     placeholder="Passord"
                 />
-                <Button>
+                <Button onClick={() => onRegisterUserWithEmailAndPassword()}>
                     Registrer
                 </Button>
-                <Button
+                <Button onClick={() => onGoogleSignIn()}
                     style={ {backgroundColor: '#4285f4'} }
                 >
                     Registrer med Google

@@ -2,10 +2,10 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
+// import { getAuth, onAuthStateChanged} from 'firebase/auth'
+
 /*
 Importér de metodene du trenger fra Firestore
-
-// import { getAuth, onAuthStateChanged} from 'firebase/auth'
 
 import { addDoc, collection, getDoc, doc, updateDoc, deleteDoc, getDocs } from 'firebase/firestore'
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
@@ -24,8 +24,15 @@ const db = getFirestore(app)
 const auth = getAuth(app)
 
 const createQuestion = (question) => {
-    // Legg til spørsmål i Firestore 
-    // https://firebase.google.com/docs/firestore/manage-data/add-data#add_a_document
+    // Legg til spørsmål i Firestore. Denne metoden kalles fra komponenten src/Containers/Question.js 
+
+    /* 
+        Følg enten dokumentasjonen her https://firebase.google.com/docs/firestore/manage-data/add-data#add_a_document
+        eller se løsningsforslag https://github.com/bekk/firebase-workshop/blob/main/_L%C3%B8sningsforslag_/Del%202%20-%20Firestore/README.md#legge-til-et-dokument-i-databasen
+       
+        Etter at du har lagt til kode her for å legge til spørsmålet i Firestore, 
+        sjekk din Firestore for å se om spørsmålet har blitt lagt til.
+    */
 };
 
 const getQuestion = (id) => {
@@ -116,5 +123,3 @@ export {
     sendPasswordReset
 };
 
-export {
-};
