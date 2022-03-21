@@ -1,11 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { createQuestion, deleteQuestion, getQuestion, updateQuestion } from '../firebase'
+
 
 const Question = () => {  
     const navigate = useNavigate();
     const { id } = useParams()
     const [question, setQuestion] = useState({});
+
+    const onSaveButtonClick = () => {
+        if(id) {
+            updateQuestion(question, id)   
+            navigate('/')
+            return
+        }
+        createQuestion(question)
+        navigate('/')
+    }
+
+    const onDeleteButtonClick = () => {
+        deleteQuestion(id)
+        navigate('/')
+    }
+
+    useEffect(() => {
+        if(id) {
+            getQuestion(id)
+                .then((questionSnapshot) =>
+                    setQuestion(questionSnapshot.data())
+                )
+                .catch((e) => console.log(e));
+        }
+      }, [id]);
 
     return (
         <>
@@ -17,16 +44,16 @@ const Question = () => {
                 <Form>
                     <FormField>
                         <label style={ {marginBottom: '0.5em'} } htmlFor="title">Spørsmål</label>
-                        <textarea rows="2" cols="50" type="text"  name="question" id="question"  onChange={ e => setQuestion({ ...question, title: e.target.value }) } />
+                        <textarea rows="2" cols="50" type="text" value={question.title} name="question" id="question"  onChange={ e => setQuestion({ ...question, title: e.target.value }) } />
                     </FormField>
                     <FormField>
                         <label style={ {marginBottom: '0.5em'} } htmlFor="answer">Svar</label>
-                        <textarea rows="1" cols="50" type="text"  name="answer" id="answer"  onChange={ e => setQuestion({ ...question, answer: e.target.value }) }/>
+                        <textarea rows="1" cols="50" type="text" value={question.answer} name="answer" id="answer"  onChange={ e => setQuestion({ ...question, answer: e.target.value }) }/>
                     </FormField>
                 </Form>
                 <ButtonsContainer>
-                    <SaveButton>Lagre</SaveButton>
-                    <DeleteButton>Slett</DeleteButton>
+                    <SaveButton onClick={() => onSaveButtonClick()}>Lagre</SaveButton>
+                    <DeleteButton onClick={() => onDeleteButtonClick()}>Slett</DeleteButton>
                 </ButtonsContainer>
             </QuestionContainer>
         </>

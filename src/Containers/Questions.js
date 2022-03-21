@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-
+import { getQuestions } from './firebase'
 
 const Questions = () => {  
     const navigate = useNavigate();
-    
-    const QuestionRow = ({question} ) => {
-        return ( 
-        <TableRow>
-            <TableData>{ question.title }</TableData>
-            <TableData>{ question.answer }</TableData>
-        </TableRow>)
-    }
+    const [questions, setQuestions] = useState([]);
+
+    useEffect(() => {
+      getQuestions()
+        .then((questionsSnapshots) =>
+          setQuestions(questionsSnapshots.docs.map((q) => q.data()))
+        )
+        .catch((e) => console.log(e));
+    }, []);
 
     return (
         <>
@@ -29,7 +30,13 @@ const Questions = () => {
                         </TableRow>
                     </thead>
                     <tbody>
-                        {/* Here you can insert your QuestionRow */}
+                        {questions.map(question => {
+                            return ( 
+                            <TableRow>
+                                <TableData>{ question.title }</TableData>
+                                <TableData>{ question.answer }</TableData>
+                            </TableRow>)
+                        })}
                     </tbody>
                 </Table>      
             </QuestionsContainer>
