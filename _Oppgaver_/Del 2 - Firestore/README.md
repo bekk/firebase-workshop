@@ -35,6 +35,7 @@ Kopier `firebaseConfig` objektet i til utklippstavla og sett det inn der det hø
 
 Nå er appen din klar til å kobles til firestore! 🎉
 
+> 💡 Det finnes mye bra dokumentasjon på firestore sine nettsider. Se https://firebase.google.com/docs/firestore. 
 
 ## Legg til et dokument
 
