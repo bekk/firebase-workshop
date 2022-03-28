@@ -2,16 +2,14 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
-// import { getAuth, onAuthStateChanged} from 'firebase/auth'
-
 /*
 Importér de metodene du trenger fra Firestore
 
 import { addDoc, collection, getDoc, doc, updateDoc, deleteDoc, getDocs } from 'firebase/firestore'
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 */
 
-// Fyll inn firebase config tilhørende ditt Firebase-prosjekt
+/* Fyll inn firebase config tilhørende ditt Firebase-prosjekt */
 const firebaseConfig = {
     apiKey: '',
     authDomain: '',
@@ -19,6 +17,7 @@ const firebaseConfig = {
     appId: ''
 };
 
+/* Utkommenter disse når firebase config er satt opp */
 //const app = initializeApp(firebaseConfig)
 //const db = getFirestore(app)
 //const auth = getAuth(app)
