@@ -1,7 +1,5 @@
 # Del 1 - Oppsett, hosting og deploy
 
-todo introduksjon
-
 ## Steg 1: Opprett Firebase-prosjekt
 
 1. Gå til [Firebase Console](https://console.firebase.google.com)
