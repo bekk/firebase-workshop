@@ -19,9 +19,9 @@ const firebaseConfig = {
     appId: ''
 };
 
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
-const auth = getAuth(app)
+//const app = initializeApp(firebaseConfig)
+//const db = getFirestore(app)
+//const auth = getAuth(app)
 
 const createQuestion = (question) => {
     // Legg til spørsmål i Firestore. Denne metoden kalles fra komponenten src/Containers/Question.js 
