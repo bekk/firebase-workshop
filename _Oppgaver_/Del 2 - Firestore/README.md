@@ -4,11 +4,11 @@ Vi skal nå begynne å få vår web-applikasjon til å snakke med vår helt egen
 
 ## Sett opp Firebase config
 
-Det første vi skal jeg gjøre er å fylle ut `firebaseConfig` i filen `firebase.js`. Dette trenger vi for å kunne kommunisere med firestore. 
+Det første vi skal gjøre er å fylle ut `firebaseConfig` i filen `firebase.js`. Dette trenger vi for å kunne kommunisere med Firestore. 
 
 ### Lag database
 
-Før du kan koble til firestore og legge til dokumenter må vi gi Google beskjed om å opprette en database i Firestore Database for oss. Gå til Firebase-konsollen, velg Firestore Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks en lokasjon i Europa.
+Før du kan koble til firestore og legge til dokumenter må vi gi Google beskjed om å opprette en database i Firestore Database for oss. Gå til Firebase-konsollen, velg Firestore Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks. en lokasjon i Europa.
 
 ### Last ned verktøyene som hører til firestore i CLI-en.
 
@@ -16,7 +16,7 @@ Kjør en ny firebase init i prosjektmappen din, og denne gangen velger du: <br /
 
 <code>Firestore: Configure security rules and indexes files for Firestore</code>
 
-Velg default-verdiene som dukker opp ved å trykke Enter til du får 
+Velg default-verdiene som dukker opp ved å trykke <kbd>Enter</kbd> til du får:
 
 <code> ✔Firebase initialization complete! </code>
 
@@ -25,7 +25,7 @@ Siste oppsett er å hente ut config fra firebasekonsollen.
 
 Gå til Project Settings i [Firebase Console](https://console.firebase.google.com). 
 
-Klikk "Add Web App" under `Your Apps` nederst 
+Klikk "Add Web App" under `Your Apps` nederst.
 
 Gi appen et kult navn, for eksempel Quiz Game 2000 🧠 
 
@@ -36,9 +36,16 @@ Kopier `firebaseConfig` objektet i til utklippstavla og sett det inn der det hø
 Nå er appen din klar til å kobles til firestore! 🎉
 
 
+<details><summary>💡 Tips </summary>
+
+</br>
+ 
+>Husk at det finnes mye bra dokumentasjon på firestore sine nettsider. Se https://firebase.google.com/docs/firestore. 
+</details>
+
 ## Legg til et dokument
 
-Så akkurat nå kan brukeren din skrive inn et spørsmål og svar, og trykke på lagre. Men bak den ytre skjer det ingenting. Dette skal vi nå fikse 🛠!
+Akkurat nå kan brukeren din skrive inn et spørsmål og svar, og trykke på lagre. Men bak den ytre skjer det ingenting. Dette skal vi nå fikse 🛠!
 
 Første oppgave blir å legge til et nytt spørsmål i din Firestore database fra din nettside. 
 
@@ -72,7 +79,7 @@ Fram til nå har vi forholdt oss til et og et spørsmål, men nå ønsker vi å 
 
 Lag en quiz med et utvalg av spørsmålene fra databasen. Foreløpig vil denne quizen kun bestå av dine spørsmål, men i neste del av workshopen skal vi koble på autentisering, og da vil vi få mulighet til å generere en quiz med spørsmål som også er lagt inn av andre brukere.
 
-Du kan jo f.eks la brukeren som skal generere en quiz få mulighet til å velge hvor mange spørsmål hen vil ha listet opp?
+Du kan jo f.eks. la brukeren som skal generere en quiz få mulighet til å velge hvor mange spørsmål hen vil ha listet opp?
 
 ## Ekstraoppgaver
 
