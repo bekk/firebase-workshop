@@ -29,7 +29,7 @@ Firestore is the database we will use to store our data. In this task you will l
 
 [Tasks – Part 2](/_Oppgaver_/Del%202%20-%20Firestore/README.md)
 
-[Solution - Part 2](/_Løsningsforslag_/Del%202%20-%20Firestore/README.md)
+[Solution - Part 2](/_Proposed%20Solutions_/Part%202%20-%20Firestore/README.md)
 
 # Part 3 - Authentication 😀
 
@@ -37,7 +37,7 @@ We will now add authentication to the mix. Firebase Authentication will be conne
 
 [Tasks – Part 3](/_Oppgaver_/Del%203%20-%20Autentisering/README.md)
 
-[Solution - Part 3](/_Løsningsforslag_/Del%203%20-%20Autentisering/README.md)
+[Solution - Part 3](/_Proposed%20Solutions_/Part%203%20-%20Authentication/README.md)
 
 # Part 4 - Authorization 🔐
 
@@ -45,7 +45,7 @@ Until now, we have not implemented any access control (authorization). All users
 
 [Tasks – Part 4](/_Oppgaver_/Del%204%20-%20Sy%20det%20sammen/README.md)
 
-[Solution - Part 4](/_Løsningsforslag_/Del%204%20-%20Sy%20det%20sammen/README.md)
+[Solution - Part 4](/_Proposed%20Solutions_/Part%204%20-%20Connecting%20it%20all%20together/README.md)
 
 # Bonus Tasks 🤓
 
