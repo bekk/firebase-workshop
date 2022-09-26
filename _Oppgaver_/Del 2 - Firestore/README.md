@@ -1,92 +1,92 @@
-# Oppgaver Del 2 - Firestore
+# Tasks Part 2 - Firestore
 
-Vi skal nå begynne å få vår web-applikasjon til å snakke med vår helt egen database i Firestore.
+We are now going to get the application to talk to its own Firestore database.
 
-## Sett opp Firebase config
+## Configure Firebase
 
-Det første vi skal gjøre er å fylle ut `firebaseConfig` i filen `firebase.js`. Dette trenger vi for å kunne kommunisere med Firestore. 
+### Create the Database
 
-### Lag database
+Before you can connect to Firestore and add documents, we need to enable Firestore in the Firebase Console. Go to the console, select Firestore Databse in the side menu, and initialize a database. Choose "Test mode" your preferred region.
 
-Før du kan koble til firestore og legge til dokumenter må vi gi Google beskjed om å opprette en database i Firestore Database for oss. Gå til Firebase-konsollen, velg Firestore Database i sidemenyen og opprett en database. Velg "Test mode" og f.eks. en lokasjon i Europa.
+### Configure Security Rules and Indexes
 
-### Last ned verktøyene som hører til firestore i CLI-en.
+Run `firebase init` again and select:
 
-Kjør en ny firebase init i prosjektmappen din, og denne gangen velger du: <br />
+```
+Firestore: Configure security rules and indexes files for Firestore
+```
 
-<code>Firestore: Configure security rules and indexes files for Firestore</code>
+Select the defaults by pressing <kbd>Enter</kbd> until you see:
 
-Velg default-verdiene som dukker opp ved å trykke <kbd>Enter</kbd> til du får:
+```
+ ✔Firebase initialization complete!
+```
 
-<code> ✔Firebase initialization complete! </code>
+### Add firebaseConfig to firebase.js
 
-### Legg til firebaseConfig i firebase.js
-Siste oppsett er å hente ut config fra firebasekonsollen.
+The last thing you need to do is to fill out `firebaseConfig` in the file `firebase.js`. This is necessary for the app to communicate with Firestore.
 
-Gå til Project Settings i [Firebase Console](https://console.firebase.google.com). 
+Go to Project Settings in the [Firebase Console](https://console.firebase.google.com).
 
-Klikk "Add Web App" under `Your Apps` nederst.
+Clock "Add Web App" under `Your Apps`.
 
-Gi appen et kult navn, for eksempel Quiz Game 2000 🧠 
+Give your app a cool name, like "Quiz Game 2000 🧠". 🆒
 
-Huk av på "also setup hosting.." og velg den du satte opp tidligere.
+Check the "also setup hosting.." option and select the app you just created.
 
-Kopier `firebaseConfig` objektet i til utklippstavla og sett det inn der det hører hjemme i `firebase.js`.
+Copy the `firebaseConfig` JSON-object to your clipboard and paste it into `firebase.js`.
 
-Nå er appen din klar til å kobles til firestore! 🎉
-
+Your app is now ready to connect to Firestore! 🎉
 
 <details><summary>💡 Tips </summary>
 
 </br>
- 
->Husk at det finnes mye bra dokumentasjon på firestore sine nettsider. Se https://firebase.google.com/docs/firestore. 
+
+> Remember to check out the official documentation on Firestore: https://firebase.google.com/docs/firestore.
+
 </details>
 
-## Legg til et dokument
+## Add a Document
 
-Akkurat nå kan brukeren din skrive inn et spørsmål og svar, og trykke på lagre. Men bak den ytre skjer det ingenting. Dette skal vi nå fikse 🛠!
+Right now, the user can add a question and an answer, and click "Save". But nothing useful really happens. Let's fix that!
 
-Første oppgave blir å legge til et nytt spørsmål i din Firestore database fra din nettside. 
+Your task is to make the "Save" function actually saves the question to the Firestore database.
 
-En bruker skal altså kunne skrive inn et spørsmål og svar på nettsiden, og så skal dette bli lagt inn i din database.
+When you see that the question is appearing in the Firestore collection in the Firebase Console, then you are ready for the next task. 🥇
 
-Når du ser at spørsmålet du legger inn dukker opp i din Firestore collection er du ferdig og klar for neste oppgave 🥇
+![Add question](/resources/createQuestion.png)
 
-![Legg til spørsmål](/resources/createQuestion.png)
+## Fetch a Document from the Database
 
-## Hent et dokument fra databasen
+When you go to the URL (`http://localhost:3000/question/{id}`) with `{id}` matching the question you just added to the Firestore collection, then this question's properties should be displayed in the input fields.
 
-Når du går inn på url'en ( http://localhost:3000/question/{id} ) med id tilsvarende det spørsmålet du nettopp la til i Firestore-databasen, så skal dette spørsmål bli fylt ut i input-feltene.
+![Edit question](/resources/editQuestion.png)
 
-![Legg til spørsmål](/resources/editQuestion.png)
+## Edit a Document
 
-## Endre et dokument fra databasen
+Add a possibility for the user to edit an existing question. If you are on a question's, edits it and saves it, then this should be persisted to the database as well.
 
-Legg til mulighet for å kunne endre på et eksisterende spørsmål i databasen. Dersom du går inn på et spørsmål som allerede finnes og gjør en endring og lagrer dette. Så skal feltene i databasen tilhørende dette dokumentet oppdatere seg.
+## Delete a Document
 
-## Slett et dokument fra databasen
+Add the functionality necessary to let a user delete a question from the database.
 
-Lag funksjonalitet for å slette et spørsmål fra databasen.
+## Fetch Multiple Documents
 
-## Hent mange dokumenter fra databasen
+Until now, we have only looked at one question at a time. But let's make it possible to view all the available question/answer pairs.
 
-Fram til nå har vi forholdt oss til et og et spørsmål, men nå ønsker vi å gjøre slik at du kan liste opp alle de spørsmålene som du har lagt inn.
+![List questions](/resources/getQuestions.png)
 
-![Legg til spørsmål](/resources/getQuestions.png)
+## Create a Quiz
 
-## Lag en Quiz
+Create a quiz with a selection of questions from the database. Currently the quiz will only consist of your own questions, but in the next part of the workshop, we will add authentication and let you generate quizzes with questions from other users as well.
 
-Lag en quiz med et utvalg av spørsmålene fra databasen. Foreløpig vil denne quizen kun bestå av dine spørsmål, men i neste del av workshopen skal vi koble på autentisering, og da vil vi få mulighet til å generere en quiz med spørsmål som også er lagt inn av andre brukere.
+You can for instance implement a feature that lets the user that is generating a quiz select how many questions to use?
 
-Du kan jo f.eks. la brukeren som skal generere en quiz få mulighet til å velge hvor mange spørsmål hen vil ha listet opp?
+## Bonus Tasks
 
-## Ekstraoppgaver
+Here are some extra stuff you could do to improve the quiz generator app. Or work on your own ideas!
 
-Under har du et sett med ekstraoppgaver som kan gjøres for å gjøre quiz-nettsiden enda bedre. Eller så kan du arbeide med egne forbedringer og ideer.
-
-- Sett opp henting av dokumenter med real-time oppdatering.
-- Legg til tidspunkt for når dokumentet ble laget og når det ble oppdatert.
-- Legg til flere felt per spørsmåls-dokument. F.eks kategori.
-- Sett en custom id til et spørsmåls-dokument.
-- Hent ut kun de spørsmål som er laget etter et gitt tidspunkt.
+- Use Firestore's streaming functionality to get realtime updates.
+- Add timestamps for when a document is created and/or updated.
+- Add more fields to your question documents. For instance a `category` field.
+- Only fetch questions created of a certain age.
