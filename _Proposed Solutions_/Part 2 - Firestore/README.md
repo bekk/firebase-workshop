@@ -143,7 +143,7 @@ const createQuiz = async (numberOfQuestions) => {
 };
 ```
 
-# Ekstra - Get documents with real-time update
+# Extra - Get documents with real-time update
 
 ```js
 // Firebase
