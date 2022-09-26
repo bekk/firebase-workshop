@@ -1,47 +1,48 @@
-# Del 1 - Oppsett, hosting og deploy
+# Part 1 - Hosting, Deployment and Setup
 
-## Steg 1: Opprett Firebase-prosjekt
+In this chapter we will create a project and deploy our website to the Internet. Don't worry – we will only be using the Free tier of Firebase.
 
-1. Gå til [Firebase Console](https://console.firebase.google.com)
-2. Logg inn eller opprett bruker
-3. Lag et nytt prosjekt
-4. Gi prosjektet et navn - f.eks. "bekk-workshop-quiz" (du kan godt skru av Analytics for prosjektet 😏)
-5. Firebase-prosjektet er opprettet! 🎉
+## Step 1: Create a Firebase project
 
-## Steg 2: Installer Firebase Tools
+1. Go to the [Firebase Console](https://console.firebase.google.com)
+2. Log in or create an account
+3. Create a new project
+4. Give your project a name, for instance "bekk-workshop-quiz" (when asked, don't enable Analytics for the project 😏)
+5. Congrats! Your Firebase project is created! 🎉
 
-1. Åpne terminalen på din maskin og installer Firebase Tools ved å kjøre <code>npm install -g firebase-tools</code> (https://github.com/firebase/firebase-tools)
-2. Skriv <code>firebase login</code> og følg instruksjonene i terminalen for å logge inn
-3. Du har nå satt opp Firebase lokalt! 🎉
+## Step 2: Install Firebase Tools
 
-## Steg 3: Klon prosjektet til din maskin
+1. Open your terminal and install the Firebase Tools CLI globally by running `npm install -g firebase-tools`. (https://github.com/firebase/firebase-tools)
+2. Enter `firebase login` og follow the instructions to log in with the account used in Step 1.
+3. Give yourself a well-deserved high-five. 🙌
 
-1. Bruk git til å klone prosjektet til din maskin, eventuelt kan prosjektet lastes ned som en .zip
-2. Åpne prosjektet i din favoritt-IDE, for eksempel [Visual Studio Code](https://code.visualstudio.com/)
-3. Skriv <code>npm i</code> etterfulgt av <code>npm start</code>
-4. Nettleseren åpnes og "Quiz Generator" kjører på [localhost:3000](http://localhost:3000/)
-5. Prosjektet kjører nå lokalt! 🎉
+## Step 3: Clone the Project to Your Machine
 
-## Steg 4: Konfigurere prosjektet med Firebase
+1. Use git til å clone the project (`git clone git@github.com:bekk/firebase-workshop.git`)
+2. Open the project in your favorite editor or IDE. For instance [Visual Studio Code](https://code.visualstudio.com/)
+3. Write `npm install` followed by `npm start`
+4. Your browser should automatically open and "Quiz Generator" should run on [localhost:3000](http://localhost:3000/).
 
-1. For å koble ditt lokale prosjekt med Firebase må vi gjøre en rask konfigurering. Det starter vi ved å skrive inn
-   <code>firebase init</code>.
-2. Følg instruksene (se bildet under). På første steg velg: <br />
-   <code>Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys</code> <br />
-3. Velg kontoen du har registrert firebase-prosjektet til.
-4. Som ditt public directory skriver du <code>build</code>. Her vil vår nettside bli bygget til.
-5. Velg <code>y</code> til at det skal være en single-page-application.
-6. Svar <code>N</code> til Github actions oppsettet.
-7. Hvis du får beskjed om at <code>File build/index.html already exists</code> svarer du <code>N</code> til spørsmålet om du skal overskrive filen.
-8. Og med det er du koblet opp mot firebase 🎉!
+## Step 4: Connect the Project to Firebase
 
+1. In order to connect your local project to Firebase, we need to make a quick configuration. Start by entering `firebase init`.
+2. Follow the instructions (see the image below). On the first step, select:
 
-![Noe slikt som dette](/resources/firebaseSetupHosting.png)
+```
+Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+```
 
+3. Select the account that you used to register your project.
+4. As your public directory, enter `build`. This is where our built code will be located.
+5. Answer yes (`y`) to it being a Single Page Application.
+6. Answer no (`N`) to setting up GitHub Actions.
+7. If you get the message "File build/index.html already exists", answer `N` to _not_ overwrite the file.
 
-## Steg 5: Send appen ut på internett
+![Something like this](/resources/firebaseSetupHosting.png)
 
-1. Åpne en ny terminal (eller bare terminer den kjørende applikasjonen med ctrl+c) og skriv <code>firebase projects:list</code>
-2. Åpne filen <code>.firebaserc</code> og se til at Project ID samsvarer med ditt nyopprettede prosjekt.
-3. Skriv <code>npm run build</code> etterfulgt av <code>firebase deploy --only hosting</code>
-4. Prosjektet kjører nå på internett! 🎉
+## Step 5: Ship it to the Internet
+
+1. Open a new terminal and write `firebase projects:list`
+2. Open the file `.firebaserc` and make sure that the Project ID matches your newly created project.
+3. Write `npm run build` followed by `firebase deploy --only hosting`
+4. Your app is live! 🎉 Compliment yourself on a job well done.
