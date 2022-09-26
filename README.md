@@ -1,57 +1,54 @@
-# Grunnleggende Firebase workshop (Firebase v9) 🔥
+# Firebase Workshop 🔥
 
-I denne workshopen skal vi ta for oss noen av de mest grunnleggende elementene innenfor Firebase-plattformen. Vi kommer til å fokusere på å bli kjent med Hosting, Firestore og Autentisering. Og for de aller ivrigste, så kan denne applikasjonen utvides videre med Firebase Functions og Firebase Storage.
+In this workshop, we are going to cover the basics of the Firebase platform. We will focus on getting to know Hosting, Firestore and Authentication. And if we have the time, we will also explore Firebase Cloud Functions and Firebase Storage.
 
-## Antatte forkunnskaper 📚
+We assume that the participants in this workshop have a basic understanding of web development in general, and modern Javascript in particular. We use React, so it is an advantage if you have some knowledge of this framework.
 
-Vi antar at deltakerne i denne workshopen har en grunnleggende forståelse for webutvikling generelt, og moderne JavaScript spesielt. Vi bruker React, så det er en fordel om du har noe kjennskap til dette.
+## Prerequisites 💾
 
-## Forhåndskrav 💾
+- Node 16 or newer - https://nodejs.org/en/download/
+- A Google account
+- Terminal (i.e. iTerm for Mac or Terminal for Windows)
+- An IDE, i.e. VS Code (https://code.visualstudio.com/)
 
-- Node 16 - https://nodejs.org/en/download/
-- Google-konto
-- Github-konto https://github.com/
-- Terminal (f.eks. iTerm for Mac eller Terminal for Windows)
-- En IDE f.eks. VS Code (https://code.visualstudio.com/)
+## About the Application 🏋️
 
-## Om applikasjonen 🏋️
+We are going to make a quiz generator application. In this app, the users should be able to add questions and anwers, see an overview of all their questions, and generate a quiz based on all the available questions in the database.
 
-Vi skal lage en quiz-generator-applikasjon. I applikasjonen skal brukerne kunne legge til spørsmål og svar, se en oversikt over sine spørsmål, samt generere en quiz basert på alle de spørsmålene og svarene som er lagt inn i databasen.
+We will start with no authentication at all, but then later add it a role-based permission system. This way we will make sure that only registered users kan add questions and generate quizzes, and that only _admin_ users can see the entire collection of questions. This way people can add all sorts of questions, and we will be able to generate quizzes with a set of these questions.
 
-Vi kommer til å starte uten noe brukerstyring, men vi vil etterhvert utvide slik at det er kun registrerte brukere som kan lage spørsmål og quiz, og at det er admin-brukerne som kan se en oversikt over det til en hver tid alle spørsmålene som ligger inne. På en slik måte kan man be folk legge inn ulike quiz-spørsmål, og få generert en quiz med et utvalg av spørsmålene i databasen.
+# Part 1 - Hosting, Deployment and Setup 💻
 
-# Del 1 - Hosting, deploy og oppsett 💻
+The first task will be to set up a fresh Firebase project and clone this code, which will be used as a starting point. You will connect your Firebase project to your version of the quiz generator, and deploy it so it's on the Internet.
 
-Vi vil i første del fokusere på å sette opp en ny Firebase-applikasjon og klone denne koden, slik at vi kan jobbe videre på den som utgangspunkt. Vi skal knytte ditt Firebase-prosjekt til din versjon av quiz-generatoren og deploye applikasjonen slik at den dukker opp på din Firebase-konto.
+[Tasks - Part 1](/_Oppgaver_/Del%201%20-%20Hosting,%20deploy%20og%20oppsett/README.md)
 
-[Oppgaver - Del 1](/_Oppgaver_/Del%201%20-%20Hosting,%20deploy%20og%20oppsett/README.md)
+# Part 2 - Firestore 📦
 
-# Del 2 - Firestore 📦
+Firestore is the database we will use to store our data. In this task you will learn about collections, documents, snapshots, structuring your data, and more!
 
-Her går vi gjennom Firestore database Collections, Documents, Data. Snapshot, stream data, Datastruktur etc.
+[Tasks – Part 2](/_Oppgaver_/Del%202%20-%20Firestore/README.md)
 
-[Oppgaver - Del 2](/_Oppgaver_/Del%202%20-%20Firestore/README.md)
+[Solution - Part 2](/_Løsningsforslag_/Del%202%20-%20Firestore/README.md)
 
-[Løsningsforslag - Del 2](/_Løsningsforslag_/Del%202%20-%20Firestore/README.md)
+# Part 3 - Authentication 😀
 
-# Del 3 - Autentisering 🔐
+We will now add authentication to the mix. Firebase Authentication will be connected to the Users collection, and we will have a look at what this auth object is.
 
-Vi kobler på Autentisering til applikasjonen. Knytter dette opp mot Users-collection. Går gjennom Authentication-fanen i Firebase. Ser på hva Auth-objektet er. Osv.
+[Tasks – Part 3](/_Oppgaver_/Del%203%20-%20Autentisering/README.md)
 
-[Oppgaver - Del 3](/_Oppgaver_/Del%203%20-%20Autentisering/README.md)
+[Solution - Part 3](/_Løsningsforslag_/Del%203%20-%20Autentisering/README.md)
 
-[Løsningsforslag - Del 3](/_Løsningsforslag_/Del%203%20-%20Autentisering/README.md)
+# Part 4 - Authorization 🔐
 
-# Del 4 - Sy det sammen 🪡🧵
+Until now, we have not implemented any access control (authorization). All users can add questions and create quizzes. But now that we have _authentication_ in place, we can restrict user's privileges a bit to have more control.
 
-Fram til nå har vi ikke hatt noen kontroll på hvem som kan legge til spørsmål, legge til spørsmål og lage quiz. Samtidig har vi nå lagt til støtte for dette ved å koble på autentisering i applikasjonen. Nå er tiden inne for å knytte disse to sammen, slik at vi får litt kontroll på de som bruker applikasjonen.
+[Tasks – Part 4](/_Oppgaver_/Del%204%20-%20Sy%20det%20sammen/README.md)
 
-[Oppgaver - Del 4](/_Oppgaver_/Del%204%20-%20Sy%20det%20sammen/README.md)
+[Solution - Part 4](/_Løsningsforslag_/Del%204%20-%20Sy%20det%20sammen/README.md)
 
-[Løsningsforslag - Del 4](/_Løsningsforslag_/Del%204%20-%20Sy%20det%20sammen/README.md)
+# Bonus Tasks 🤓
 
-# Ekstraoppgaver 🤓
+Why stop now already? We've got more tasks for you. Have a look!
 
-For de som har lyst til på flere oppgaver.
-
-[Oppgaver - Del 5](/_Oppgaver_/Ekstraoppgaver/README.md)
+[Tasks – Part 5](/_Oppgaver_/Ekstraoppgaver/README.md)
