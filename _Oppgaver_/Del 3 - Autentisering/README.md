@@ -1,55 +1,56 @@
-# Oppgaver Del 3 - Autentisering
+# Tasks Part 3 - Authentication
 
-I denne delen av oppgavesettet skal vi sette opp autentisering via Firestore Authentication slik at vi kan registrere nye brukere, logge inn og ut samt beholde informasjon om brukerne.
-Dokumentasjonen om Firebase Authentication finner du [her](https://firebase.google.com/docs/auth).
+Now it's time to set up authentication with Firebase Authentication, so we can add new users, log in and out and store some basic user info.
 
-## Registrere din første bruker med Firebase Authentication
+The Firebase Authentication documentation can be found [here](https://firebase.google.com/docs/auth).
 
-<img alt="Registrer med firebase" src="/resources/registerWithFirebase.png" width="500"/>
+## Register your first user manually
 
-Opprett en bruker i Firebase via grensesnittet. Gå inn i Firebase Console og registrer en bruker med e-post og passord. Husk passordet! Du skal logge inn med denne brukeren snart.
+<img alt="Register with Firebase" src="/resources/registerWithFirebase.png" width="500"/>
 
-> 💡 Du må legge til appen din i Firestore for å få Firestore Authentication til å virke. Dette kan gjøres ved å følge veiledningen under "Project Settings" i [Firebase Console](https://console.firebase.google.com)
+Create a new user via the GUI. Go to the Firebase Console and register a user with email and password. Remember the password! You will be logging in with these credentials in your app shortly.
 
-## Logge inn med e-post og passord
+> 💡 You need to add your app to Firestore to make Firestore Authentication work. Do this by following the instructions at "Project Settings" in the [Firebase Console](https://console.firebase.google.com).
 
-<img alt="Logg inn med epost" src="/resources/loginWithEmail.png" width="500"/>
+## Logging in with email and password
 
-Kult! Du har nå registrert en bruker i Firebase. Implementer støtte for å logge inn i appen med e-post og passord. 
-Det er litt kode i `Login.js` du kan bruke som utgangspunkt for implementasjonen. 
+<img alt="Log in with email" src="/resources/loginWithEmail.png" width="500"/>
 
-## Registrere bruker med e-post og passord fra appen
+Cool! You now have a registered user account in Firebase. Implement the functionality needed to log in with email and password in your app.
+There is some code in `Login.js` that you can use as a starting point.
 
-<img alt="Registrer bruker med e-post" src="/resources/registerWithEmail.png" width="500"/>
+## Register users with email and password in your app
 
-Det er ikke veldig skalerbart hvis du må registrere alle brukere manuelt 🥵 La oss gjøre noe med det! 
-Skriv kode for å registrere en bruker med e-post og passord i Firebase. Det burde gjøre susen. Bruk registreringsskjemaet fra `Register.js` som utgangspunkt.
+<img alt="Register user with email" src="/resources/registerWithEmail.png" width="500"/>
 
-## Registrere en bruker med Google Provider
+Manually registering all users doesn't scale well! 🥵 Let's do something about that!
 
-Mange syntes det er masete å huske på brukernavn og passord til alle de ulike nettsidene de besøker. Heldigvis har Firebase støtte for Google-registrering! 
-Implementer støtte for å registrere seg med sin Google-bruker. Utvid funksjonaliteten i `Register.js` til å åpne et vindu med Google-autentisering når man klikker på "Registrer med Google".
+Write the code needed to register a user with email and password in Firebase. That should do the trick. Use the registration form in `Register.js`.
 
-## Logge inn med Google Provider
+## Register a user with the Google Provider
 
-Nice! Bra jobba! Nå er det på tide å logge inn med Google kontoen. Implementer logg inn med Google når man klikker på "Logg inn med Google"-knappen. 
-Utvid funksjonaliteten i `Login.js`. 
+Instead of having to create a new _password_ in order to use the quiz app, let's make it possible to register an account using one's Google account. One less password to remember!
 
-## Logg ut funksjonalitet
+Expand the functionality of `Register.js` to support registering with Google.
 
-Når man kan logge inn, må man kunne logge ut også.. Er du ikke enig? 😏 Legg inn funksjonalitet for å kunne logge ut av kontoen igjen.
+## Log in with the Google Provider
 
-## Nullstill passord
+Nice! Good work! Now it's time to _log in_ with a Google account. Implement login with Google when the "Log in with Google" button is pressed in `Login.js`.
 
-Det er helt vanlig å glemme passord! Legg til kode som lar deg nullstille passordet. 
+## Logging out
 
-## Beholde info om bruker
+When it's possible to log in, one should be able to log out as well. Don't you agree? 😏 Implement this now, please.
 
-Nå begynner det å bli spennende. Lag en ny Firestore-collection for brukerinformasjon. Når en bruker registrerer seg i appen skal de bli lagret her. 
-Det fikser du! 
+## Reset Password
 
-### Ekstraoppgaver 💅
+It is common to forget one's password. Add code to let users reset their password.
 
-- Se om du kan oppdatere mailen som sendes ut fra Firebase ved opprettelse av bruker, glemt passord og slikt.
-- Legg til flere autentiseringsproviders. Github, Twitter, osv.
-- Bytt ut autentiseringskomponentene med med [Firebase UI](https://github.com/firebase/firebaseui-web)
+## Store some info about the user
+
+Now it's getting exciting. Create a new Firestore collection for user information. When a user is registered, also create a document representing the user in this new collection.
+
+### Bonus Tasks 💅
+
+- See if you can customize the content of the email sent by Firebase when a user is registered, password reset, etc.
+- Add support for more social login providers. GitHub, Twitter, or others.
+- Replace the authentication components with [Firebase UI](https://github.com/firebase/firebaseui-web)
