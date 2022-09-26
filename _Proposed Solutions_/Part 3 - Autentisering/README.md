@@ -1,19 +1,19 @@
-# Løsningsforslag for Del 3 Autentisering
+# Proposed solutions for Part 3 Authentication
 
-## Registrering av bruker med epost
+## Register a user with email
 
-Dette kan gjøres manuelt via Firebase-grensesnittet eller med kode.
+This can be done manually via the Firebase interface or with code.
 
-For å registrere en bruker kan vi bruke funksjonen `createUserWithEmailAndPassword` fra `firebase/auth`. Funksjonen tar i mot tre argumenter: et `auth`-objekt, `email` og `password`.
+To register a user we can use the function `createUserWithEmailAndPassword` from `firebase/auth`. The function accepts three arguments: an `auth` object, `email` and `password`.
 
-Det første vi gjør er å få tak på `auth`-objektet. Denne kan legges rett under `initializeApp(firebaseConfig)` i `firebase.js`.
+The first thing we do is get hold of the `auth` object. This can be placed directly under `initializeApp(firebaseConfig)` in `firebase.js`.
 
 ```javascript
 import { getAuth } from "firebase/auth";
 
 let auth = getAuth();
 
-// Se til at authDomain også er satt i firebaseConfig. Denne verdien kan finnes via Project Settings i Firebase consolen og under "Your Apps".
+// Ensure that authDomain also is set in firebaseConfig. This value can be found in Project Settings in Firebase console under "Your Apps".
 const firebaseConfig = {
     ....
     authDomain: '...',
@@ -22,9 +22,9 @@ const firebaseConfig = {
 
 ```
 
-Sånn da har vi det på plass. Dette objektet inneholder den nåværende autentiseringsstatusen til applikasjonen og er viktig for å få autentisering til å virke. `getAuth` er inngangsporten til Firebase sitt autentiserings API og du trenger den for å administrere brukerkontoer.
+Tada! Now we have that one set up. This object contains the current authentication state of the application and is important for authentication to work. `getAuth` is the gateway to Firebase's authentication API and you need it to manage user accounts.
 
-Videre kan vi lage en egen funksjon for å registrere brukere. Den kan se omtrent slik ut:
+Furthermore, we can create a separate function to register users. It may look something like this:
 
 ```javascript
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -40,23 +40,23 @@ export const registerWithEmailAndPassword = async (name, email, password) => {
 };
 ```
 
-Deretter kobler du knappen i registreringsskjemaet til funksjonen vi har laget.
+Then connect the button in the registration form to the function we have created.
 
 ```javascript
 import { registerWithEmailAndPassword } from "../firebase";
 
 <Button onClick={() => registerWithEmailAndPassword(name, email, password)}>
-  Registrer
+  Register
 </Button>;
 ```
 
-Dokumentasjon: https://firebase.google.com/docs/auth/web/password-auth
+Dokumentation: https://firebase.google.com/docs/auth/web/password-auth
 
-## Registrere en bruker med Google Provider
+## Register a user with Google Provider
 
-Før vi kan bruke Google som autentiseringstjeneste må vi legge dette til som en ny Authenication Provider i Firebase-consolen. Velg "Sign-in method" -> "Add new Provider" og velg Google. Fyll ut skjemaet.
+Before we can use Google as an authentication service, we need to add this as a new Authenication Provider in the Firebase console. Select "Sign-in method" -> "Add new Provider" and select Google. Fill out the form.
 
-For å så bruke Google som innlogging kan du gjøre følgende.
+To then use Google as a login, you can do the following.
 
 ```javascript
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -72,11 +72,11 @@ export const signInWithGoogle = async () => {
 };
 ```
 
-Fra view-komponenten kan du nå bare kalle på `signInWithGoogle`-metoden for å logge inn med Google.
+From the view component, you can now just call the `signInWithGoogle` method to log in with Google.
 
-## Logg inn med epost
+## Log in with email
 
-Send inn epost og passord fra view-komponenten til følgende metode for å logge inn med brukernavn og passord
+Submit email and password from the view component to the following method to login with username and password
 
 ```javascript
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -90,9 +90,9 @@ const logInWithEmailAndPassword = async (email, password) => {
 };
 ```
 
-## Logg inn med Google
+## Log in with Google
 
-For å logge inn med Google kaller du på funksjonen `signInWithPopup` og sender med `auth` og `googleProvider`.
+To log in with Google, call the function `signInWithPopup` and send with `auth` and `googleProvider`.
 
 ```javascript
 import { signInWithPopup } from "firebase/auth";
@@ -108,9 +108,9 @@ const signInWithGoogle = async () => {
 };
 ```
 
-## Logg ut-funksjonalitet
+## Log out functionality
 
-For å logge ut trenger du bare å kalle på en funksjon
+To log out, you only need to call a function
 
 ```javascript
 import { signOut } from "firebase/auth";
@@ -120,9 +120,9 @@ export const logOut = () => {
 };
 ```
 
-## Reset passord-funksjonalitet
+## Reset password
 
-For å trigge utsendelse av reset passord mail trenger du også bare å kalle på en funksjon med ønsket epost-adresse.
+To trigger the sending of a reset password email, you also only need to call a function with the desired email address.
 
 ```javascript
 import { sendPasswordResetEmail } from "firebase/auth";
@@ -136,9 +136,9 @@ const sendPasswordReset = async (email) => {
 };
 ```
 
-## Behold info om bruker ved registrering
+## Store info about the user when register
 
-Av og til ønsker man kanskje å ta vare på noe mer informasjon om bruker-objektet enn bare brukernavn og den registrerte id'en. Da kan en egen Firestore-collection `Users` være nyttig å bruke. I en slik collection kan man for eksempel holde på navnet til personen, en link til et profilbilde og hva slags rolle brukeren skal ha - `user` / `admin` eller lignende.
+Sometimes you might want to take care of some more information about the user object than just the username and the registered ID. Then a separate Firestore collection `Users` can be useful to use. In such a collection, for example, you can keep the name of the person, a link to a profile picture and what kind of role the user should have - `user' / `admin' or similar.
 
 ```javascript
 export const registerWithEmailAndPassword = async (name, email, password) => {
@@ -158,7 +158,7 @@ export const registerWithEmailAndPassword = async (name, email, password) => {
 };
 ```
 
-Det kan også være praktisk å utvide logg inn med Google funksjonaliteten til å også legge til et dokument i `Users`-collection dersom dette ikke ligger inne, og om det ikke blir lagt til ved registrering.
+It can also be practical to extend the login with Google functionality to also add a document to the `Users` collection if this is not included, and if it is not added during registration.
 
 ```javascript
 const signInWithGoogle = async () => {

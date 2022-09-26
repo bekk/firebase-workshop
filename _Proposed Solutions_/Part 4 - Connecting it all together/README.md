@@ -1,6 +1,6 @@
-# Løsningsforslag Del 4 - Sy det sammen
+# Proposed solution for connecting it all together
 
-## En innlogget bruker skal kun se sine spørsmål
+## A logged-in user should only see his questions
 
 ```javascript
 const getQuestions = async (createdBy) => {
@@ -14,7 +14,7 @@ const getQuestions = async (createdBy) => {
 };
 ```
 
-## En admin-bruker skal kunne se alle spørsmål som er lagt inn
+## An admin user must be able to see all questions that have been entered
 
 ```javascript
 const getQuestions = async (createdBy) => {
@@ -31,7 +31,7 @@ const getQuestions = async (createdBy) => {
 };
 ```
 
-## Kun innloggede brukere skal kunne lage en quiz
+## Only logged in users should be able to create a quiz
 
 ```javascript
 
@@ -39,7 +39,7 @@ const createQuiz = async () => {
     const auth = getAuth();
 
     if(!auth || !auth.currentUser) {
-        return Promise.reject('Du må være logget inn for å lage en quiz')
+        return Promise.reject('You must be logged in to create a quiz')
     }
 
     ....
@@ -49,16 +49,16 @@ const createQuiz = async () => {
 
 ```
 
-## Ekstraoppgave - Security Rules
+## Extra - Security Rules
 
-Security rules brukes for å sikre hvem som får tilgang til dokumentene i Firestore databasen.
+Security rules are used to ensure who gets access to the documents in the Firestore database.
 
-Security Rules kan ikke brukes som filter i spørringen. Reglene gir spørringen enten data eller ikke noe data.
+Security Rules cannot be used as a filter in the query. The rules give the query either data or no data.
 
-Les mer her om du ønsker å bruke `security.rules`
+Read more here if you want to use `security.rules`
 https://firebase.google.com/docs/firestore/security/rules-query
 
-Eksempel på hvordan en security rule kan se ut for lese- og skrivetilgang til Firestore dokumenter
+Example of how a security rule might look for read and write access to Firestore documents
 
 ```code
 rules_version = '2';
@@ -71,6 +71,6 @@ service cloud.firestore {
 }
 ```
 
-Via https://console.firebase.google.com/project/{DITT_PROJECT_ID}/firestore/rules kan du eksperimentere med Security Rules for din Firestore database
+At https://console.firebase.google.com/project/{DITT_PROJECT_ID}/firestore/rules you can experiment with Security Rules for your Firestore database
 
 ![Security Rules](/resources/SecRules.png)
