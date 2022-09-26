@@ -1,21 +1,21 @@
-# Oppgaver Del 4 - Sy det sammen
+# Tasks Part 4 - Authorization
 
-Vi har nå kommet til del 4 av denne workshopen, der vi skal sy sammen det vi har laget. Nå har vi funksjonalitet for å legge til og fjerne spørsmål, samt se en oversikt over disse. I tillegg har vi en autentiseringsløsning på plass. Og da passer det å begynne å se på hvordan vi kan koble dette sammen.
+Now for the last part of the workshop! We now have functionality for adding, editing and deleting questions, as well as seeing an overview of all available questions. In addition to this, we have authentication in place. Now it's a good time to combine this to provide some security in the shape of authorization (access control).
 
-_Som en hovedregel skal tilgangsstyring til Firestore-dokumenter gjøres via `rules.json` (https://firebase.google.com/docs/firestore/security/get-started#writing_rules), men da vi ikke rekker å gå gjennom alt i denne workshopen kommer vi til å forenkle tilgangskontrollen. Det er derimot sterkt anbefalt å se nærmere på security rules om man ønsker en mer fullskala applikasjon i produksjon._
+Securing your Firestore database is done using what's called "Security Rules". You can put these rules in your `rules.json` (https://firebase.google.com/docs/firestore/security/get-started#writing_rules) file. We don't have time in this workshop to cover too much of Security Rules, so we will keep it simple. But we strongly encourage you to take a closer look at Security Rules and securing your database properly, if you're going for production.
 
-## En innlogget bruker skal kun se sine spørsmål
+## See one's own questions
 
-En innlogget bruker må kunne se de spørsmålene som brukeren har lagt inn, og ikke de andre sine spørsmål.
+Logged-in users should be able to see all the questions they have created themselves. And users should NOT be able to see other users' questions.
 
-## En admin-bruker skal kunne se alle spørsmål som er lagt inn
+## Administrators should be able to see all questions
 
-En bruker av typen admin skal kunne ha full kontroll i applikasjonen og kunne administrere alle spørsmål som er lagt inn i databasen.
+Users that have the role of "admin" should be able to see, edit and delete all questions that have been created, by any user.
 
-## Kun innloggede brukere skal kunne lage en quiz
+## Only logged-in users are quiz makers
 
-Vi ønsker ikke at hvem som helst skal kunne lage en quiz. Derfor kan vi sette en begrensning om at kun de som er innlogget er de som kan lage en quiz.
+We don't want anyone to be able to create a quiz. Only authenticated users should be able to do this.
 
-## Ekstraoppgave
+## Bonus Tasks
 
-- Sette opp **Security Rules** for database tilgangen. Det er med Security Rules man sikrer database-tilganger på den riktige måten. https://firebase.google.com/docs/rules
+- Set up **Security Rules** for securing database access. It's with Security Rules one does this the right way. https://firebase.google.com/docs/rules
