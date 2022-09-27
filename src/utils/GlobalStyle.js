@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle, css } from "styled-components";
 
 const base = css`
   * {
@@ -10,7 +10,7 @@ const base = css`
     font-family: Monaco;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FBF8F1;
+    background-color: #fbf8f1;
   }
 
   h1,
@@ -25,7 +25,7 @@ const base = css`
   }
 
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
 
@@ -35,15 +35,16 @@ const base = css`
     justify-content: center;
     display: flex;
     font-size: 1em;
-    background-color: #E9DAC1;
+    background-color: #e9dac1;
     border: 2px solid black;
     cursor: pointer;
     color: black;
   }
 
-  input, textarea {
+  input,
+  textarea {
     font-family: Monaco;
-    width: '100%';
+    width: "100%";
     font-size: 14pt;
     resize: none;
     padding: 0.3em;
@@ -173,7 +174,7 @@ const reset = css`
   blockquote:after,
   q:before,
   q:after {
-    content: '';
+    content: "";
     content: none;
   }
   table {
@@ -181,7 +182,10 @@ const reset = css`
     border-spacing: 0;
   }
 
-  table, tbody, thead, td {
+  table,
+  tbody,
+  thead,
+  td {
     border: 1px solid black;
   }
 `;

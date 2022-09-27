@@ -16,11 +16,9 @@ module.exports = {
   ignorePatterns: [
     "/lib/**/*", // Ignore built files.
   ],
-  plugins: [
-    "import",
-  ],
+  plugins: ["import"],
   rules: {
-    "quotes": ["error", "double"],
+    quotes: ["error", "double"],
     "import/no-unresolved": 0,
   },
 };
