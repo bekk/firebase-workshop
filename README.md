@@ -21,7 +21,7 @@ We will start with no authentication at all, but then later add it a role-based 
 
 ### Chapter 1 - Hosting, Deployment and Setup 💻
 
-The first task will be to set up a fresh Firebase project and clone this code, which will be used as a starting point. You will connect your Firebase project to your version of the quiz generator, and deploy it so it's on the Internet.
+Your first task will be to set up a fresh Firebase project and clone this code, which will be used as a starting point. You will connect your Firebase project to your version of the quiz generator, and deploy it so it's on the Internet.
 
 [Tasks - Chapter 1](/_Tasks_/Chapter%201%20-%20Hosting,%20deployment%20and%20setup/README.md)
 
@@ -35,7 +35,7 @@ Firestore is the database we will use to store our data. In this task you will l
 
 ### Chapter 3 - Authentication 😀
 
-We will now add authentication to the mix. Firebase Authentication will be connected to the Users collection, and we will have a look at what this auth object is.
+We will now add authentication to the mix. You will learn how basic account management is done with Firebase Authentication. We'll cover email/password based authentication and login with social media providers.
 
 [Tasks – Chapter 3](/_Tasks_/Chapter%203%20-%20Authentication/README.md)
 
@@ -43,7 +43,7 @@ We will now add authentication to the mix. Firebase Authentication will be conne
 
 ### Chapter 4 - Authorization 🔐
 
-Until now, we have not implemented any access control (authorization). All users can add questions and create quizzes. But now that we have _authentication_ in place, we can restrict user's privileges a bit to have more control.
+Until now, there is no access control (authorization) implemented. All users can add questions and create quizzes. But now that _authentication_ is in place, you can restrict users' privileges a bit to have more control.
 
 [Tasks – Chapter 4](/_Tasks_/Del%204%20-%20Sy%20det%20sammen/README.md)
 
