@@ -17,13 +17,15 @@ We are going to make a quiz generator application. In this app, the users should
 
 We will start with no authentication at all, but then later add it a role-based permission system. This way we will make sure that only registered users kan add questions and generate quizzes, and that only _admin_ users can see the entire collection of questions. This way people can add all sorts of questions, and we will be able to generate quizzes with a set of these questions.
 
-# Chapter 1 - Hosting, Deployment and Setup 💻
+## Tasks
+
+### Chapter 1 - Hosting, Deployment and Setup 💻
 
 The first task will be to set up a fresh Firebase project and clone this code, which will be used as a starting point. You will connect your Firebase project to your version of the quiz generator, and deploy it so it's on the Internet.
 
 [Tasks - Chapter 1](/_Tasks_/Chapter%201%20-%20Hosting,%20deployment%20and%20setup/README.md)
 
-# Chapter 2 - Firestore 📦
+### Chapter 2 - Firestore 📦
 
 Firestore is the database we will use to store our data. In this task you will learn about collections, documents, snapshots, structuring your data, and more!
 
@@ -31,7 +33,7 @@ Firestore is the database we will use to store our data. In this task you will l
 
 [Solution - Chapter 2](/_Proposed%20Solutions_/Chapter%202%20-%20Firestore/README.md)
 
-# Chapter 3 - Authentication 😀
+### Chapter 3 - Authentication 😀
 
 We will now add authentication to the mix. Firebase Authentication will be connected to the Users collection, and we will have a look at what this auth object is.
 
@@ -39,7 +41,7 @@ We will now add authentication to the mix. Firebase Authentication will be conne
 
 [Solution - Chapter 3](/_Proposed%20Solutions_/Chapter%203%20-%20Authentication/README.md)
 
-# Chapter 4 - Authorization 🔐
+### Chapter 4 - Authorization 🔐
 
 Until now, we have not implemented any access control (authorization). All users can add questions and create quizzes. But now that we have _authentication_ in place, we can restrict user's privileges a bit to have more control.
 
@@ -47,7 +49,7 @@ Until now, we have not implemented any access control (authorization). All users
 
 [Solution - Chapter 4](/_Proposed%20Solutions_/Chapter%205%20-%20Authorization/README.md)
 
-# Bonus Tasks 🤓
+### Bonus Tasks 🤓
 
 Why stop now already? We've got more tasks for you. Have a look!
 
