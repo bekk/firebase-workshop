@@ -1,19 +1,17 @@
-# Ekstraoppgaver
+# Bonus Tasks
 
-Når man først har begynt å ta i bruk Firebase, så finnes det veldig mange områder å utforske videre. Under er forslag til noen oppgaver som du kan se nærmere på dersom du har tid og lyst til å utvikle denne applikasjonen videre.
+When you have learned the basics of Firebase, there are many possible directions to explore further. Here are some examples of things you can look closer on, if you want to take your application to the next level.
 
-## Eksempler på oppgaver
+🚓 Set up **Security Rules** for database access control. This is how you properly secure your Firestore database. https://firebase.google.com/docs/rules
 
-🚓 Sette opp **Security Rules** for database tilgangen. Det er med Security Rules man sikrer database-tilganger på den riktige måten. https://firebase.google.com/docs/rules
+💾 **Firebase Emulator Suite**. Set up the Emulator Suite for local development instead of using your production database. https://firebase.google.com/docs/emulator-suite
 
-💾 **Firebase Emulator Suite**. Sett opp Emulator for å ikke lese / skrive direkte fra prod-databasen. https://firebase.google.com/docs/emulator-suite
+📦 Check out **Firebase Storage**. How about allowing your users to upload images with their questions? Firebase Storage is Firebase's blob storage solution, and is an easy way to allow storing files. Like images.
 
-📦 Test ut **Firebase Storage**. Hva med å legge til muligheten for at et quiz-spørsmål kan være et bilde? Med Firebase Storage får du tilgjengelig lagringsplass til ditt Firebase prosjekt der brukerne kan laste opp f.eks bilder.
+📚 Add categories to the questions, like Sports, Music og Politics. Allow users to create quizzes belonging to certain categories.
 
-📚 Legg til flere kategorier til et Quiz-spørmål. Et spørmsål kan f.eks være av typen Sport, Musikk, Politikk. Deretter kan du utvide funksjonaliteten ved "Lag Quiz" til å også kun gjelde visse kategorier.
+🔐 Add more authentication providers. Firebase, GitHub, Twitter, Microsoft.
 
-🔐 Sett opp mulighet for flere autentiseringsproviders. Firebase, Github, Twitter, Microsoft.
+🤫 Sign-in **anonymously**. Test the Anonymous Authentication feature of Firebase Auth. This way you can have "open data" but still some control. If an anonymous user chooses to create a proper account, you can upgrade the anonymous account, allowing the user's data from the anonymous account to be associated with the new one.
 
-🤫 Sign-in **anonymously**. Test ut funksjonaliteten rundt anonyme brukere. For disse kan man ha Security Rules selv om de ikke har opprettet en bruker. De kan så bli knyttet opp til en reel bruker, og ha med seg sin data videre. https://firebase.google.com/docs/auth/web/anonymous-auth .
-
-🏋️ Gjør "Lag Quiz"-funksjonaliteten om til en **Firebase Function** som kalles på. Obs. Dette vil kreve at du oppgraderer Firebase-kontoen din fra Spark til Blaze. https://firebase.google.com/pricing. Det vil i stor grad fortsatt være gratis å bruke, men du må legge til betalingsopplysninger. I tillegg vil vi sterkt anbefale å sette opp varsling dersom det viser seg at månedsregningen går over et visst beløp. Da dette da trolig er noe du bør sjekke opp.
+🏋️ Implement the "Create Quiz" functionality as a callable **Firebase Function**. This will require you to upgrade your Firebase project from the free plan (Spark) to pay-as-you-go (Blaze). Read more about pricing here: https://firebase.google.com/pricing. The free quotas of the Blaze plan are generous, but we encourage you to be careful and set up budget warnings.
