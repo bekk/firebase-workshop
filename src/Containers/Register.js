@@ -12,7 +12,10 @@ function Register() {
     const [password, setPassword] = useState('');
 
     /*
-        Man kan her lage en useEffect for å lytte på endringer i innloggings-state dersom man ønsker å gjøre en handling før man f.eks navigererer tilbake.
+
+        // You can use the useEffect hook here to listen to changes to the
+        // authentication state, in case you want to perform some action before
+        // navigating back, for instance.
 
         useEffect(() =>{
             const auth = getAuth()
@@ -39,19 +42,19 @@ function Register() {
                     type="text"
                     value={ name }
                     onChange={ (e) => setName(e.target.value) }
-                    placeholder="Navn"
-                />                
+                    placeholder="Name"
+                />
                 <Input
                     type="text"
                     value={ email }
                     onChange={ (e) => setEmail(e.target.value) }
-                    placeholder="E-postadresse"
+                    placeholder="Email Address"
                 />
                 <Input
                     type="password"
                     value={ password }
                     onChange={ (e) => setPassword(e.target.value) }
-                    placeholder="Passord"
+                    placeholder="Password"
                 />
                 <Button onClick={() => onRegisterUserWithEmailAndPassword()}>
                     Registrer
@@ -59,11 +62,11 @@ function Register() {
                 <Button onClick={() => onGoogleSignIn()}
                     style={ {backgroundColor: '#4285f4'} }
                 >
-                    Registrer med Google
+                    Register with Google
                 </Button>
 
                 <div>
-                    Har du konto? <Link to="/login">Logg inn her</Link>.
+                    Do you have an account already? <Link to="/login">Log in here</Link>.
                 </div>
             </RegisterContainer>
         </RegisterWrapper>

@@ -3,27 +3,27 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 
-const Quiz = () => {  
+const Quiz = () => {
     const navigate = useNavigate()
 
     return (
         <>
             <div style={ { width: '3em', marginLeft: '1em'} }>
-                <button onClick={ () => navigate('/') }>Tilbake</button>
+                <button onClick={ () => navigate('/') }>Go Back</button>
             </div>
             <QuestionsContainer>
                 <QuestionsHeader>Quiz</QuestionsHeader>
                 <Table>
                     <thead>
                         <tr>
-                            <TableDataHead>Spørsmål</TableDataHead>
-                            <TableDataHead>Svar</TableDataHead>
-                            <TableDataHead>Laget av</TableDataHead>
+                            <TableDataHead>Question</TableDataHead>
+                            <TableDataHead>Answer</TableDataHead>
+                            <TableDataHead>Made by</TableDataHead>
                         </tr>
                     </thead>
                     <tbody>
                     </tbody>
-                </Table>              
+                </Table>
             </QuestionsContainer>
         </>
     );

@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { logOut, createQuiz } from '../firebase';
 
-const Home = () => {  
+const Home = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState(undefined);
 
     /*
-    Brukes for å lytte til endringer om bruker er logget inn eller ikke. 
+    // Used to listen for changes to the logged-in user state.
 
     useEffect(() =>{
         const auth = getAuth()
@@ -26,7 +26,7 @@ const Home = () => {
 
     return (
         <Container>
-            <HomeHeader>Quiz generator</HomeHeader>            
+            <HomeHeader>Quiz generator</HomeHeader>
             <CreateQuizButton onClick={() => onCreateQuiz()}>
                 Lag Quiz
             </CreateQuizButton>

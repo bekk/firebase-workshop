@@ -8,9 +8,11 @@ function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+
     /*
-        Man kan her lage en useEffect for å lytte på endringer i innloggings-state dersom man ønsker å gjøre en handling før man f.eks navigererer tilbake.
+        // You can use the useEffect hook here to listen to changes to the
+        // authentication state, in case you want to perform some action before
+        // navigating back, for instance.
 
         useEffect(() =>{
             const auth = getAuth()
@@ -38,7 +40,7 @@ function Login() {
                     value={ email }
                     onChange={ (e) => setEmail(e.target.value) }
                     placeholder="Epost"
-                />           
+                />
                 <Input
                     type="password"
                     value={ password }
@@ -46,17 +48,17 @@ function Login() {
                     placeholder="Passord"
                 />
                 <Button onClick={() => onLoginWithEmailAndPassword()}>
-                    Logg inn
+                    Log in
                 </Button>
                 <Button onClick={() => onGoogleSignIn()} style={ {  backgroundColor: '#4285f4'} }>
-                    Logg inn med Google
+                    Log in with Google
                 </Button>
                 <div>
-                    <Link to="/reset">Glemt passord?</Link>
+                    <Link to="/reset">Forgot your password?</Link>
                 </div>
                 <br/>
                 <div>
-                    <Link to="/register">Register deg</Link>
+                    <Link to="/register">Register</Link>
                 </div>
             </LoginContainer>
         </LoginWrapper>

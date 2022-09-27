@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { getQuestions } from '../firebase'
 
-const Questions = () => {  
+const Questions = () => {
     const navigate = useNavigate();
     const [questions, setQuestions] = useState([]);
 
@@ -18,27 +18,27 @@ const Questions = () => {
     return (
         <>
             <div style={ { width: '3em', marginLeft: '1em'} }>
-                <button onClick={ () => navigate('/') }>Tilbake</button>
+                <button onClick={ () => navigate('/') }>Go Back</button>
             </div>
             <QuestionsContainer>
-                <QuestionsHeader>Spørsmål</QuestionsHeader>
+                <QuestionsHeader>Question</QuestionsHeader>
                 <Table>
                     <thead>
                         <TableRow>
-                            <TableDataHead>Spørsmål</TableDataHead>
-                            <TableDataHead>Svar</TableDataHead>
+                            <TableDataHead>Question</TableDataHead>
+                            <TableDataHead>Answer</TableDataHead>
                         </TableRow>
                     </thead>
                     <tbody>
                         {questions.map(question => {
-                            return ( 
+                            return (
                             <TableRow>
                                 <TableData>{ question.title }</TableData>
                                 <TableData>{ question.answer }</TableData>
                             </TableRow>)
                         })}
                     </tbody>
-                </Table>      
+                </Table>
             </QuestionsContainer>
         </>
     );
@@ -50,7 +50,7 @@ const Table = styled.table`
 const TableRow = styled.tr`
     &:hover {
       font-weight: bold;
-    }  
+    }
 `
 const TableData = styled.td`
     padding: 5px;

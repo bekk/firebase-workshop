@@ -3,13 +3,13 @@ import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
 /*
-Importér de metodene du trenger fra Firestore
+// Import the methods you need from Firebase
 
 import { addDoc, collection, getDoc, doc, updateDoc, deleteDoc, getDocs } from 'firebase/firestore'
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 */
 
-/* Fyll inn firebase config tilhørende ditt Firebase-prosjekt */
+// Fill in the config values of your Firebase project below
 const firebaseConfig = {
     apiKey: '',
     authDomain: '',
@@ -17,74 +17,72 @@ const firebaseConfig = {
     appId: ''
 };
 
-/* Utkommenter disse når firebase config er satt opp */
+/* Uncomment the lines below when your Firebase config is good. */
 //const app = initializeApp(firebaseConfig)
 //const db = getFirestore(app)
 //const auth = getAuth(app)
 
 const createQuestion = (question) => {
-    // Legg til spørsmål i Firestore. Denne metoden kalles fra komponenten src/Containers/Question.js 
+    // Add questions to Firestore. This method is called from the component src/Containers/Question.js
 
-    /* 
-        Følg enten dokumentasjonen her https://firebase.google.com/docs/firestore/manage-data/add-data#add_a_document
-        eller se løsningsforslag https://github.com/bekk/firebase-workshop/blob/main/_L%C3%B8sningsforslag_/Del%202%20-%20Firestore/README.md#legge-til-et-dokument-i-databasen
-       
-        Etter at du har lagt til kode her for å legge til spørsmålet i Firestore, 
-        sjekk din Firestore for å se om spørsmålet har blitt lagt til.
+    /*
+        Either follow the documentation here: https://firebase.google.com/docs/firestore/manage-data/add-data#add_a_document
+        or see the propoesd solution: https://github.com/bekk/firebase-workshop/blob/main/_L%C3%B8sningsforslag_/Del%202%20-%20Firestore/README.md#legge-til-et-dokument-i-databasen
+
+        After you have written your code for adding a question to Firestore,
+        check if you can see it appear in the Firestore Console.
     */
 };
 
+// Fetch a question document from Firestore here
 const getQuestion = (id) => {
-    // Hent spøsmål fra Firestore
     // https://firebase.google.com/docs/firestore/query-data/get-data#get_a_document
 }
 
+// Update a question in Firestore
 const updateQuestion = (question, id) => {
-    // Oppdatér spøsmål i Firestore
     // https://firebase.google.com/docs/firestore/manage-data/add-data#update-data
 }
 
+// Delete a question by ID
 const deleteQuestion = (id) => {
-    // Slett spøsmål i Firestore med id
     // https://firebase.google.com/docs/firestore/manage-data/delete-data#delete_documents
 }
 
+// Fetch all questions
 const getQuestions = () => {
-    // Hent all spørsmål 
     // https://firebase.google.com/docs/firestore/query-data/get-data#get_multiple_documents_from_a_collection
 }
 
 const createQuiz = () => {
-    // Lag en quiz med spørsmål fra Firestore
+    // Create a quiz with questions from Firestore.
 }
 
 const registerWithEmailAndPassword = async (name, email, password) => {
-    // Registrer en bruker med epost og passord
+    // Register a user with email and password
     // https://firebase.google.com/docs/auth/web/password-auth#create_a_password-based_account
     try {
-        console.log("Registreing av bruker var en suksess!");
-    } 
+        console.log("Registration was a success!");
+    }
     catch (err) {
         console.error(err);
     }
 };
 
 const signInWithGoogle = async () => {
-    // Registring og innlogging med Google Provider
     // https://firebase.google.com/docs/auth/web/google-signin#handle_the_sign-in_flow_with_the_firebase_sdk
     try {
-        console.log("Innlogget bruker med Google")
-    } 
+        console.log("Logged in with Google")
+    }
     catch (err) {
         console.error(err);
     }
 };
 
-const logInWithEmailAndPassword = async (email, password) => {    
-    // Logg inn med epost og passord
+const logInWithEmailAndPassword = async (email, password) => {
     // https://firebase.google.com/docs/auth/web/password-auth#sign_in_a_user_with_an_email_address_and_password
     try {
-        console.log("Bruker innlogget med epost og passord")
+        console.log("Logged in using email and password")
     }
     catch (err) {
         console.error(err);
@@ -92,23 +90,21 @@ const logInWithEmailAndPassword = async (email, password) => {
 };
 
 const logOut = async () => {
-    // Metode for å logge ut
     // https://firebase.google.com/docs/auth/web/password-auth#next_steps
 }
 
 
 const sendPasswordReset = async (email) => {
-    // Send mail for å resette passord
     // https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
     try {
-        console.log("Passord reset mail er sendt")
+        console.log("Password reset email sent!")
     }
     catch (err) {
         console.error(err);
     }
 };
 
-export {    
+export {
     createQuestion,
     getQuestion,
     updateQuestion,
@@ -121,4 +117,3 @@ export {
     logOut,
     sendPasswordReset
 };
-

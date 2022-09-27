@@ -5,11 +5,11 @@ import { sendPasswordReset } from '../firebase'
 
 function Reset() {
     const [email, setEmail] = useState('');
- 
+
     const onSendResetPassword = () => {
         sendPasswordReset(email)
     }
-      
+
     return (
         <ResetWrapper>
             <ResetContainer>
@@ -17,14 +17,14 @@ function Reset() {
                     type="text"
                     value={ email }
                     onChange={ (e) => setEmail(e.target.value) }
-                    placeholder="Epost"
+                    placeholder="Email"
                 />
                 <Button onClick={() => onSendResetPassword()}>
-                    Send reset passord mail
+                    Send reset password email
                 </Button>
 
                 <div>
-                    <Link to="/register">Registrer deg</Link>
+                    <Link to="/register">Register</Link>
                 </div>
             </ResetContainer>
         </ResetWrapper>
