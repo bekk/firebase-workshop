@@ -28,34 +28,34 @@ const Home = () => {
     <Container>
       <HomeHeader>Quiz generator</HomeHeader>
       <CreateQuizButton onClick={() => onCreateQuiz()}>
-        Lag Quiz
+        Create quiz
       </CreateQuizButton>
       <ButtonsContainer>
         <button onClick={() => navigate("question")}>
-          Legg til nytt spørsmål
+          Add new question
         </button>
         <button
           style={{ marginLeft: "1em" }}
           onClick={() => navigate("questions")}
         >
-          Mine spørsmål
+         My questions
         </button>
       </ButtonsContainer>
 
       {!user && (
         <UserManagementContainer>
-          <button onClick={() => navigate("/login")}>Logg inn</button>
+          <button onClick={() => navigate("/login")}>Log in</button>
           <button
             style={{ marginLeft: "1em" }}
             onClick={() => navigate("/register")}
           >
-            Registrer
+            Register
           </button>
         </UserManagementContainer>
       )}
       {user && (
         <UserManagementContainer>
-          <button onClick={() => logOut()}>Logg ut</button>
+          <button onClick={() => logOut()}>Log out</button>
         </UserManagementContainer>
       )}
     </Container>

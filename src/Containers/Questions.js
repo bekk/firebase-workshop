@@ -8,11 +8,15 @@ const Questions = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
+    /* 
+    Uncomment this code to get the questions 
+
     getQuestions()
       .then((questionsSnapshots) =>
         setQuestions(questionsSnapshots.docs.map((q) => q.data()))
       )
       .catch((e) => console.log(e));
+      */
   }, []);
 
   return (

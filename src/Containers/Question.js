@@ -39,7 +39,7 @@ const Question = () => {
   return (
     <>
       <div style={{ width: "3em", marginLeft: "1em" }}>
-        <button onClick={() => navigate("/")}>Tilbake</button>
+        <button onClick={() => navigate("/")}>Back</button>
       </div>
       <QuestionContainer>
         <QuestionHeader>
