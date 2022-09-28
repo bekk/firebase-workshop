@@ -23,7 +23,7 @@ We will start with no authentication at all, but then later add it a role-based 
 
 Your first task will be to set up a fresh Firebase project and clone this code, which will be used as a starting point. You will connect your Firebase project to your version of the quiz generator, and deploy it so it's on the Internet.
 
-[Tasks - Chapter 1](/_Tasks_/Chapter%201%20-%20Hosting,%20deployment%20and%20setup/README.md)
+[Tasks - Chapter 1](/_Tasks_/Chapter%201%20-%20Hosting%2C%20deployment%20and%20setup/README.md)
 
 ### Chapter 2 - Firestore 📦
 
@@ -45,12 +45,12 @@ We will now add authentication to the mix. You will learn how basic account mana
 
 Until now, there is no access control (authorization) implemented. All users can add questions and create quizzes. But now that _authentication_ is in place, you can restrict users' privileges a bit to have more control.
 
-[Tasks – Chapter 4](/_Tasks_/Del%204%20-%20Sy%20det%20sammen/README.md)
+[Tasks – Chapter 4](/_Tasks_/Chapter%204%20-Authorization/README.md)
 
-[Solution - Chapter 4](/_Proposed%20Solutions_/Chapter%205%20-%20Authorization/README.md)
+[Solution - Chapter 4](/_Proposed%20Solutions_/Chapter%204%20-%20Authorization/README.md)
 
 ### Bonus Tasks 🤓
 
 Why stop now already? We've got more tasks for you. Have a look!
 
-[Tasks – Chapter 5](/_Tasks_/Chapter%205%20-%20Bonus%20Tasks/README.md)
+[Tasks – Chapter 5](/_Tasks_/Chapter%205%20%E2%80%93%20Bonus%20Tasks/README.md)
