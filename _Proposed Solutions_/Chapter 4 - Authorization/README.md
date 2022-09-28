@@ -1,4 +1,4 @@
-# Proposed solution for connecting it all together
+# Proposed solution for Chapter 4: Authorization
 
 ## A logged-in user should only see his questions
 

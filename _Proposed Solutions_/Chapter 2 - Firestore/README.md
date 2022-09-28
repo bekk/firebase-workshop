@@ -1,4 +1,4 @@
-# Solutions to the Firestore tasks
+# Proposed solutions for Chapter 2: Firestore
 
 Before you can start to make calls to Firestore, you'll need to set up some firebaseConfig to your project, and then initialize the app.
 

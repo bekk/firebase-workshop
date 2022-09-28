@@ -1,4 +1,4 @@
-# Part 1 - Hosting, Deployment and Setup
+# Chapter 1 - Hosting, Deployment and Setup
 
 In this chapter we will create a project and deploy our website to the Internet. Don't worry – we will only be using the Free tier of Firebase.
 

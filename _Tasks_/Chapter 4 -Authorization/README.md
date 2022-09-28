@@ -1,4 +1,4 @@
-# Tasks Part 4 - Authorization
+# Chapter 4 - Authorization
 
 Now for the last part of the workshop! We now have functionality for adding, editing and deleting questions, as well as seeing an overview of all available questions. In addition to this, we have authentication in place. Now it's a good time to combine this to provide some security in the shape of authorization (access control).
 

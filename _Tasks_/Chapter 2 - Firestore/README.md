@@ -1,4 +1,4 @@
-# Tasks Part 2 - Firestore
+# Chapter 2 - Firestore
 
 We are now going to get the application to talk to its own Firestore database.
 

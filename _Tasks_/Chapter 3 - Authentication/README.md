@@ -1,4 +1,4 @@
-# Tasks Part 3 - Authentication
+# Chapter 3 - Authentication
 
 Now it's time to set up authentication with Firebase Authentication, so we can add new users, log in and out and store some basic user info.
 

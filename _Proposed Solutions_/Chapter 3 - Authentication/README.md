@@ -1,4 +1,4 @@
-# Proposed solutions for Part 3 Authentication
+# Proposed solutions for Chapter 3: Authentication
 
 ## Register a user with email
 
