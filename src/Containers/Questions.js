@@ -8,15 +8,16 @@ const Questions = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    /* 
-    Uncomment this code to get the questions 
-
     getQuestions()
-      .then((questionsSnapshots) =>
-        setQuestions(questionsSnapshots.docs.map((q) => q.data()))
-      )
+      .then((questionsSnapshots) => {
+        if (!questionsSnapshots) {
+          console.log("No questions available!");
+          return;
+        }
+
+        setQuestions(questionsSnapshots.docs.map((q) => q.data()));
+      })
       .catch((e) => console.log(e));
-      */
   }, []);
 
   return (
@@ -36,7 +37,7 @@ const Questions = () => {
           <tbody>
             {questions.map((question) => {
               return (
-                <TableRow>
+                <TableRow key={question.title}>
                   <TableData>{question.title}</TableData>
                   <TableData>{question.answer}</TableData>
                 </TableRow>

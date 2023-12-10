@@ -33,16 +33,17 @@ Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Act
 ```
 
 3. Select the account that you used to register your project.
-4. As your public directory, enter `build`. This is where our built code will be located.
-5. Answer yes (`y`) to it being a Single Page Application.
-6. Answer no (`N`) to setting up GitHub Actions.
-7. If you get the message "File build/index.html already exists", answer `N` to _not_ overwrite the file.
+4. Select "Use an existing project" and select the project you created earlier.
+5. As your public directory, enter `build`. This is where our built code will be located.
+6. Answer yes (`y`) to it being a Single Page Application.
+7. Answer no (`N`) to setting up GitHub Actions.
+8. If you get the message "File build/index.html already exists", answer `N` to _not_ overwrite the file.
 
 ![Something like this](/resources/firebaseSetupHosting.png)
 
 ## Step 5: Ship it to the Internet
 
-1. Open a new terminal and write `firebase projects:list`
+1. Write `firebase projects:list` to list your Firebase projects.
 2. Open the file `.firebaserc` and make sure that the Project ID matches your newly created project.
 3. Write `npm run build` followed by `firebase deploy --only hosting`
-4. Your app is live! 🎉 Compliment yourself on a job well done.
+4. Your app is live! 🎉 The hosting URL should be posted by the previous command and should be `https://<your-project-id>.web.app`. Compliment yourself on a job well done.

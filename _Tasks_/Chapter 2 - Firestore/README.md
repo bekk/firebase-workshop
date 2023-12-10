@@ -6,7 +6,7 @@ We are now going to get the application to talk to its own Firestore database.
 
 ### Create the Database
 
-Before you can connect to Firestore and add documents, we need to enable Firestore in the Firebase Console. Go to the console, select Firestore Databse in the side menu, and initialize a database. Choose "Test mode" your preferred region.
+Before you can connect to Firestore and add documents, we need to enable Firestore in the Firebase Console. Go to the console, select Firestore Database in the side menu, and initialize a database. Choose "Test mode" and your preferred region.
 
 ### Configure Security Rules and Indexes
 
@@ -19,30 +19,26 @@ Firestore: Configure security rules and indexes files for Firestore
 Select the defaults by pressing <kbd>Enter</kbd> until you see:
 
 ```
- ✔Firebase initialization complete!
+ ✔ Firebase initialization complete!
 ```
 
 ### Add firebaseConfig to firebase.js
 
 The last thing you need to do is to fill out `firebaseConfig` in the file `firebase.js`. This is necessary for the app to communicate with Firestore.
 
-Go to Project Settings in the [Firebase Console](https://console.firebase.google.com).
-
-Clock "Add Web App" under `Your Apps`.
-
-Give your app a cool name, like "Quiz Game 2000 🧠". 🆒
-
-Check the "also setup hosting.." option and select the app you just created.
-
-Copy the `firebaseConfig` JSON-object to your clipboard and paste it into `firebase.js`.
-
-Your app is now ready to connect to Firestore! 🎉
+1. Go to Project Settings in the [Firebase Console](https://console.firebase.google.com).
+2. Click "Add Web App" under "Your Apps".
+3. Give your app a cool name, like "Quiz Game 2000 🧠". 🆒
+4. Check the "also setup hosting.." option and select the app you just created.
+5. Click "Register app".
+6. Copy the `firebaseConfig` JSON-object to your clipboard and paste it into `src/firebase.js`.
+7. Your app is now ready to connect to Firestore! 🎉
 
 <details><summary>💡 Tips </summary>
 
 </br>
 
-> Remember to check out the official documentation on Firestore: https://firebase.google.com/docs/firestore.
+> Check out the official documentation on Firestore: https://firebase.google.com/docs/firestore.
 
 </details>
 
@@ -50,7 +46,7 @@ Your app is now ready to connect to Firestore! 🎉
 
 Right now, the user can add a question and an answer, and click "Save". But nothing useful really happens. Let's fix that!
 
-Your task is to make the "Save" function actually saves the question to the Firestore database.
+Your task is to make the "Save" function actually save the question to the Firestore database.
 
 When you see that the question is appearing in the Firestore collection in the Firebase Console, then you are ready for the next task. 🥇
 
@@ -64,7 +60,7 @@ When you go to the URL (`http://localhost:3000/question/{id}`) with `{id}` matc
 
 ## Edit a Document
 
-Add a possibility for the user to edit an existing question. If you are on a question's, edits it and saves it, then this should be persisted to the database as well.
+Add a possibility for the user to edit an existing question. If you are on a question's page (`http://localhost:3000/question/{id}`), edits it and saves it, then this should be persisted to the database as well.
 
 ## Delete a Document
 
@@ -72,7 +68,7 @@ Add the functionality necessary to let a user delete a question from the databas
 
 ## Fetch Multiple Documents
 
-Until now, we have only looked at one question at a time. But let's make it possible to view all the available question/answer pairs.
+Until now, we have only looked at one question at a time. Let's make it possible to view all the available question/answer pairs on the "My questions" page (`http://localhost:3000/questions`).
 
 ![List questions](/resources/getQuestions.png)
 

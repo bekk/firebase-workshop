@@ -36,24 +36,22 @@ Documentation https://firebase.google.com/docs/firestore/manage-data/add-data#ad
 ```js
 import { addDoc, collection } from "firebase/firestore";
 
-const createQuestion = (question) => {
+export const createQuestion = (question) => {
   const questionsRef = collection(db, "questions");
-  return addDoc(questionsRef, {
-    ...question,
-  });
+  return addDoc(questionsRef, question);
 };
 ```
 
 ## Get a document from the database
 
-To get a document from the database, you can call on the method `getDoc`. You specify a reference to a collection, and the id for a document you want to call getDoc with. This will return a Promise, which you can either resolve or reject.
+To get a document from the database, you can call the method `getDoc`. You specify a reference to a collection, and the id for a document you want to call getDoc with.
 
 Documentation https://firebase.google.com/docs/firestore/query-data/get-data#get_a_document
 
 ```js
 import { getDoc, doc } from "firebase/firestore";
 
-const getQuestion = (id) => {
+export const getQuestion = (id) => {
   const questionRef = doc(db, "questions", id);
   return getDoc(questionRef);
 };
@@ -71,11 +69,9 @@ You can consider making it so that adding a new question and updating an existin
 ```js
 import { updateDoc, doc } from "firebase/firestore";
 
-const updateQuestion = (question, id) => {
+export const updateQuestion = (question, id) => {
   const questionRef = doc(db, "questions", id);
-  return updateDoc(questionRef, {
-    ...question,
-  });
+  return updateDoc(questionRef, question);
 };
 ```
 
@@ -88,7 +84,7 @@ Documentation https://firebase.google.com/docs/firestore/manage-data/delete-data
 ```js
 import { deleteDoc, doc } from "firebase/firestore";
 
-const deleteQuestion = (id) => {
+export const deleteQuestion = (id) => {
   const questionsRef = doc(db, "questions", id);
   return deleteDoc(questionsRef);
 };
@@ -101,24 +97,12 @@ There are several ways to retrieve documents from Firestore. `getDocs` is the si
 Documentation https://firebase.google.com/docs/firestore/query-data/get-data#get_multiple_documents_from_a_collection
 
 ```js
-// Firebase
 import { getDocs, collection } from "firebase/firestore";
 
-const getQuestions = () => {
+export const getQuestions = () => {
   const questionsRef = collection(db, "questions");
   return getDocs(questionsRef);
 };
-
-// View
-const [questions, setQuestions] = useState([]);
-
-useEffect(() => {
-  getQuestions()
-    .then((questionsSnapshots) =>
-      setQuestions(questionsSnapshots.docs.map((q) => q.data()))
-    )
-    .catch((e) => console.log(e));
-}, []);
 ```
 
 ## Create a quiz with a selection of questions from the database
@@ -126,7 +110,7 @@ useEffect(() => {
 A very simple way to create a quiz based on questions from the database is to first retrieve the questions, and then pick a random selection of these questions. Perhaps you would like to send to the method how many questions you want returned?
 
 ```js
-const createQuiz = async (numberOfQuestions) => {
+export const createQuiz = async (numberOfQuestions) => {
   const questionsSnapshot = await getQuestions();
 
   const questions = [];
@@ -146,23 +130,26 @@ const createQuiz = async (numberOfQuestions) => {
 # Extra - Get documents with real-time update
 
 ```js
-// Firebase
+// src/firebase.js
 import { collection, query, onSnapshot } from "firebase/firestore";
 
-const streamQuestions = (snapshot, error) => {
+export const streamQuestions = (snapshot, error) => {
   const questionsRef = collection(db, "questions");
   let questionsQuery = query(questionsRef);
 
   return onSnapshot(questionsQuey, snapshot, error);
 };
 
-// View
+// src/Containers/Questions.js
 const [questions, setQuestions] = useState([]);
 
 useEffect(() => {
   const unsubscribe = streamQuestions(
     (querySnapshot) => {
-      if (!querySnapshot) console.log("Could not find any questions");
+      if (!querySnapshot) {
+        console.log("Could not find any questions");
+        return;
+      }
       const questionItems = querySnapshot.docs.map((docSnapshot) => {
         return {
           id: docSnapshot.id,
@@ -171,7 +158,7 @@ useEffect(() => {
       });
       setQuestions(questionItems);
     },
-    (error) => console.log(error)
+    (error) => console.log(error),
   );
   return unsubscribe;
 }, []);
