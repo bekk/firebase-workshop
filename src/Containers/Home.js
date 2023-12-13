@@ -20,7 +20,6 @@ const Home = () => {
     */
 
   const onCreateQuiz = () => {
-    createQuiz();
     navigate("quiz");
   };
 
@@ -31,14 +30,12 @@ const Home = () => {
         Create quiz
       </CreateQuizButton>
       <ButtonsContainer>
-        <button onClick={() => navigate("question")}>
-          Add new question
-        </button>
+        <button onClick={() => navigate("question")}>Add new question</button>
         <button
           style={{ marginLeft: "1em" }}
           onClick={() => navigate("questions")}
         >
-         My questions
+          My questions
         </button>
       </ButtonsContainer>
 

@@ -1,9 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { createQuiz } from "../firebase";
 
 const Quiz = () => {
   const navigate = useNavigate();
+
+  const [quiz, setQuiz] = React.useState([]);
+
+  React.useEffect(() => {
+    createQuiz().then((questions) => {
+      if (!questions?.length) {
+        console.warn(
+          "A quiz without questions is no fun! Have you forgotten to implement createQuiz?",
+        );
+      } else {
+        setQuiz(questions);
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -20,7 +35,14 @@ const Quiz = () => {
               <TableDataHead>Made by</TableDataHead>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            {quiz.map((question) => (
+              <tr key={question.title}>
+                <td>{question.title}</td>
+                <td>{question.answer}</td>
+              </tr>
+            ))}
+          </tbody>
         </Table>
       </QuestionsContainer>
     </>
