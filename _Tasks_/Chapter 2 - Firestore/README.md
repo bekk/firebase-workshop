@@ -74,9 +74,9 @@ Until now, we have only looked at one question at a time. Let's make it possible
 
 ## Create a Quiz
 
-Create a quiz with a selection of questions from the database. Currently the quiz will only consist of your own questions, but in the next part of the workshop, we will add authentication and let you generate quizzes with questions from other users as well.
+When you are on the `/quiz` page, the table should list a random selection of your questions. Every time you refresh, you get a new quiz.
 
-You can for instance implement a feature that lets the user that is generating a quiz select how many questions to use?
+You can choose yourself the number of questions you want a quiz to consist of. Ten is a good number.
 
 ## Bonus Tasks
 
